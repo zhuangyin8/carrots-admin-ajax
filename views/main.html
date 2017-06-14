@@ -1,0 +1,56 @@
+<div id="wrapper" class="wrapper">
+    <!-- nav 导航 -->
+    <nav class="navbar  navbar-static-top topbar">
+        <div class="navbar-header">
+            <!--小屏幕下侧边栏的下拉侧边栏-->
+            <button type="button" class="navbar-toggle navbar-toggle-button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <b href="#" class="topbar-brand">
+                萝卜多后台管理系统
+                <!--<img src="images/logo.png" alt="">-->
+            </b>
+        </div>
+        <div class="topbar-content">
+            <!-- ptteng-user info 登录用户信息-->
+            <user></user>
+        </div>
+
+    </nav>
+
+    <!-- ptteng-sidebar 侧边栏-->
+    <sidebar></sidebar>
+
+
+    <!--网页换肤-->
+    <a class="skinChangeBtn" type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">
+        <i class="fa fa-cog"></i>
+    </a>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header text-center modal-title">系统设置</div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">系统颜色</label>
+                            <div class="col-sm-8">
+                                <button ng-click="vm.skinChangeBtn('orange')" class="btn btn-default">1</button>
+                                <button ng-click="vm.skinChangeBtn('darkblue')" class="btn btn-default">2</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- main content 存放二级菜单的视图 -->
+    <div id="page-wrapper" class="page-wrapper">
+        <ui-view></ui-view>
+    </div>
+</div>

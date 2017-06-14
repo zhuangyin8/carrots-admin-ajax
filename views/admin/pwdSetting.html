@@ -1,0 +1,41 @@
+<div class="margin-top-100">
+    <form class="form-horizontal col-xs-9 col-md-7 col-md-offset-2  col-xs-offset-1" name="formData">
+        <div class="form-group">
+            <label class="control-label col-xs-3 text-right">输入旧密码</label>
+            <div class="col-xs-9">
+                <input type="password" class="form-control" id="oldPwd" ng-model="vm.data.oldPwd" name="oldPwd"
+                       required>
+                <!--<div ng-class="{error:formData.oldPwd.$invalid}" ng-messages="formData.oldPwd.$error"-->
+                     <!--ng-if="formData.oldPwd.$touched">-->
+                    <!--<div ng-message="required"><i class="margin-right-3 error">*</i>请输入登录名</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3 text-right">设置新密码</label>
+            <div class="col-xs-9">
+                <input type="password" class="form-control" id="newPwd" name="code"
+                       ng-model="vm.data.newPwd" ng-minlength="6" ng-maxlength="16" required>
+                <span class="error"
+                      ng-show="formData.code.$dirty && (formData.code.$error.maxlength || formData.code.$error.minlength)">
+                    请输入6~16位密码</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3 text-right">确认新密码</label>
+            <div class="col-xs-9">
+                <input type="password" class="form-control" id="newPwdAgain" name="recode"
+                       ng-model="vm.data.newPwdAgain" required>
+                <span class="error"
+                      ng-show="vm.data.newPwdAgain && formData.code.$dirty && formData.recode.$dirty && vm.data.newPwdAgain!==vm.data.newPwd">密码输入不一致</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-9 col-xs-offset-3">
+                <button class="btn btn-default btn-block"
+                        ng-disabled="formData.$invalid || vm.data.newPwdAgain!==vm.data.newPwd" ng-click="vm.save()">保存
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

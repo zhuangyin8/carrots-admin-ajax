@@ -1,0 +1,71 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="col-md-10 row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">角色</label>
+                        <div class="col-md-9">
+                            <select class="form-control"  ng-model="vm.rid">
+                                <option ng-repeat="role in vm.roleList" ng-value="role.id" ng-selected="vm.rid == role.id">{{role.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-3">用户名</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control"  ng-model="vm.list.name">
+                        </div>
+                    </div>
+                    <!--<label class="control-label">用户名</label>-->
+                    <!--<input type="text" class="form-control"  ng-model="vm.list.name">-->
+                </div>
+            </div>
+            <div class="text-right col-sm-2 col-xs-12 pull-right">
+                <button class="btn btn-primary pull-right" ng-click="vm.search()">搜索</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <b>用户列表</b>
+        <button class="btn btn-xs btn-default pull-right" ui-sref="field.managerDetail">+新增</button>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive border">
+            <table class="table table-striped text-center">
+                <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">登录名</th>
+                    <th class="text-center">角色</th>
+                    <th class="text-center">创建者</th>
+                    <th class="text-center">创建时间</th>
+                    <th class="text-center">更新人</th>
+                    <th class="text-center">更新时间</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="li in vm.list">
+                    <td>{{li.id}}</td>
+                    <td>{{li.name}}</td>
+                    <td>{{li.role.name}}</td>
+                    <td>{{li.createByName}}</td>
+                    <td>{{li.createAt|date:'yyyy-MM-dd'}}<br>{{li.createAt|date:'HH:mm:ss'}}</td>
+                    <td>{{li.updateBy}}</td>
+                    <td>{{li.updateAt|date:'yyyy-MM-dd'}}<br>{{li.updateAt|date:'HH:mm:ss'}}</td>
+                    <td>
+                        <button class="btn btn-xs btn-success"  ui-sref="field.managerDetail({id:li.id})">编辑</button>
+                        <button class="btn btn-xs btn-danger" ng-click="vm.delete(li.id)">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <pagination total="{{vm.total}}"></pagination>
+    </div>
+</div>

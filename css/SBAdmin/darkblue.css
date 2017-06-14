@@ -1,0 +1,87 @@
+/*正文背景*/
+.wrapper {
+    background-color: rgb(35, 42, 58);
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/*login页背景*/
+.bg-img {
+    background-color: rgb(35, 42, 58);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 426px;
+}
+
+/*退出按钮样式*/
+.navbar-top-links .dropdown .dropdown-close {
+    color: rgb(35, 42, 58);
+}
+
+/*sidebar选中后颜色*/
+.navActive {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/*登陆页按钮样式*/
+.btn-submit {
+    color: #fff;
+    background-color: rgb(81, 138, 194);
+    border-color: rgb(81, 138, 194);
+}
+
+.btn-submit:focus,
+.btn-submit.focus {
+    color: #fff;
+    background-color: rgb(81, 138, 194);
+    border-color: rgb(81, 138, 194);
+}
+
+.btn-submit:hover {
+    color: #fff;
+    background-color: rgb(100, 158, 220);
+    border-color: rgb(100, 158, 220);
+}
+
+/*input框 按钮*/
+.form-control:focus {
+    border-color: rgb(81, 138, 194);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(81, 138, 194, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(81, 138, 194, 0.6);
+}
+
+/*顶栏 brand*/
+.topbar-brand {
+    /*
+在 CSS 中对元素进行水平居中是非常简单的：
+如果它是一个行内元素，就对它的父元素应用 text-align: center；
+如果它是一个块级元素，就对它自身应用 margin: auto。
+*/
+    text-align: center;
+    /*增加 text-align: center; 来实现文字的水平居中。*/
+
+    height: 50px;
+    line-height: 50px;
+    /*height=line-height 垂直居中*/
+
+    float: left;
+    font-size: 20px;
+    color: white;
+    border-bottom: solid rgb(74, 95, 108) 1px;
+    width: 250px;
+}
+
+/*sidebar hover、active样式*/
+.side > li > a:focus, .side > li > a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.side > .nav-first-level.active > a {
+    text-decoration: none;
+    border-left: solid white;
+}

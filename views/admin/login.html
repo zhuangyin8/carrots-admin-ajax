@@ -1,0 +1,215 @@
+<div class="bg-img">
+    <div class="login-container container">
+        <!--<div class="jumbotron">-->
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <!--使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素
+                    增加了左侧的边距（margin）。例如，.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度。-->
+                    <div class="panel panel-default">
+                        <div>
+                            <img src="/images/SBAdmin/login-logo.png" class="login-circle-img">
+                        </div>
+                        <div class="panel-body login-panel">
+                            <form name="loginForm" class="login-from" novalidate>
+                                <!--为表单指定了名称为“loginForm”以便之后使用，同时在form中添加了“novalidate”属性，这个是阻止html5默认的输入验证，因为我们要使用自己的输入验证。-->
+
+                                <div class="form-group"
+                                     ng-class="{'has-success': loginForm.username.$valid && loginForm.username.$dirty, 'has-error': loginForm.username.$invalid && loginForm.username.$dirty}">
+                                    <input class="form-control input-lg pd-left-50 login-user" placeholder="用户名"
+                                           name="username" autofocus="" ng-model="vm.name" maxlength="16"
+                                           pattern="^[A-Za-z\d]+$" ng-minlength="5" required>
+                                    <div class="login-user-icon"></div>
+                                    <!--<span class="login-user-icon glyphicon glyphicon-user"></span>-->
+                                </div>
+
+                                <div class="form-group"
+                                     ng-class="{'has-success': loginForm.password.$valid && loginForm.password.$dirty, 'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">
+                                    <input class="form-control input-lg pd-left-50 login-psd" placeholder="密码"
+                                           name="password"
+                                           type="password" ng-model="vm.pwd" minlength="6" maxlength="16"
+                                           ng-pattern="/^\w{6,16}$/" required>
+                                    <div class="login-psd-icon"></div>
+                                    <!--<span class="login-psd-icon glyphicon glyphicon-lock"></span>-->
+                                </div>
+
+                                <div class="checkbox"
+                                     ng-show="loginForm.username.$invalid && loginForm.username.$dirty">
+                                    * 请输入5位到16位的由英文或数字组成的账号
+                                </div>
+                                <div class="checkbox"
+                                     ng-show="loginForm.password.$invalid && loginForm.password.$dirty">
+                                    * 请输入6到16位数字、字母或下划线组成的密码
+
+                                </div>
+                                <div class="checkbox">
+                                    <p class="text-danger">{{vm.errorTip}}</p>
+                                </div>
+                                <button class="btn btn-lg btn-submit btn-block login-btn" ng-click="vm.submit()"
+                                        ng-disabled="loginForm.$invalid">登录
+                                </button>
+                                <!--在提交按钮中，我们添加了指令ng-disabled来控制该按钮的有效性，其值等于myForm.$invalid，如果在表单中，只要有不符合输入验证的，则该值便为false，自然提交按钮便无效。-->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--</div>-->
+    </div>
+</div>
+
+
+<!--
+Form State and Input State
+AngularJS is constantly updating the state of both the form and the input fields.
+
+Input fields have the following states:
+
+$untouched The field has not been touched yet
+$touched The field has been touched(当输入框被失去点击,错误显示)
+$pristine The field has not been modified yet(该字段尚未修改)
+$dirty The field has been modified(该字段已被修改)
+$invalid The field content is not valid(字段内容无效)
+$valid The field content is valid(字段内容有效)
+They are all properties of the input field, and are either true or false.
+
+Forms have the following states:
+
+$pristine No fields have been modified yet(表单没有填写记录)
+$dirty One or more have been modified(表单有填写记录)
+$invalid The form content is not valid
+$valid The form content is valid
+$submitted The form is submitted
+They are all properties of the form, and are either true or false.
+
+-->
+
+<!--
+angularJS中的ng-show、ng-hide、ng-if指令都可以用来控制dom元素的显示或隐藏。
+ng-show和ng-hide根据所给表达式的值来显示或隐藏HTML元素。当赋值给ng-show指令的值为false时元素会被隐藏，
+值为true时元素会显示。ng-hide功能类似，使用方式相反。元素的显示或隐藏是通过改变CSS的display属性值来实现的。
+ng-if指令可以根据表达式的值在DOM中生成或移除一个元素。如果赋值给ng-if的表达式的值是false，
+那对应的元素将会从DOM中移除，否则生成一个新的元素插入DOM中。ng-if同no-show和ng-hide指令最本质的区别是，
+它不是通过CSS显示或隐藏DOM节点，而是删除或者新增结点。
+ng-if和ng-show的差别。这里直接附上结论:
+ ng-if will remove elements from DOM. This means that all your handlers or anything else attached to those elements will be lost. For example,
+ if you bound a click handler to one of child elements, when ng-if evaluates to false,
+ that element will be removed from DOM and your click handler will not work any more, even after ng-if later evaluates to true and displays the element.
+  You will need to reattach the handler.
+ng-show/ng-hide does not remove the elements from DOM. It uses CSS styles to hide/show elements (note: you might need to add your own classes).
+ This way your handlers that were attached to children will not be lost.
+ng-if creates a child scope while ng-show/ng-hide does not
+Elements that are not in the DOM have less performance impact and your web app might appear to be faster when using ng-if compared to ng-show/ng-hide.
+In my experience, the difference is negligible. Animations are possible when using both ng-show/ng-hide and ng-if, with examples for both in the Angular documentation.
+-->
+
+
+<!--<div class="bg-img">-->
+<!--<div class="login-container container">-->
+<!--<div class="row">-->
+<!--<div class="col-md-4 col-md-offset-4">-->
+<!--&lt;!&ndash;使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素-->
+<!--增加了左侧的边距（margin）。例如，.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度。&ndash;&gt;-->
+<!--<div class="panel panel-default">-->
+<!--<div>-->
+<!--<img src="/images/SBAdmin/login-logo.png" class="login-circle-img">-->
+<!--</div>-->
+<!--&lt;!&ndash;<h2>后台登录管理系统</h2>&ndash;&gt;-->
+<!--<div class="panel-body login-panel">-->
+<!--<form role="form" name="loginForm">-->
+<!--&lt;!&ndash;accessibility&ndash;&gt;-->
+<!--&lt;!&ndash;<fieldset>&ndash;&gt;-->
+<!--&lt;!&ndash;fieldset元素 通常用来对表单的相关元素分组&ndash;&gt;-->
+<!--<div class="form-group"-->
+<!--ng-class="{'has-success': loginForm.username.$valid && loginForm.username.$dirty, 'has-error': loginForm.username.$invalid && loginForm.username.$dirty}">-->
+<!--<input class="form-control input-lg pd-left-50 login-user" placeholder="用户名"-->
+<!--name="username" autofocus="" ng-model="vm.name" maxlength="16"-->
+<!--pattern="^[A-Za-z\d]+$" ng-minlength="5" required>-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-ok form-control-feedback"&ndash;&gt;-->
+<!--&lt;!&ndash;ng-show="loginForm.username.$valid && loginForm.username.$dirty"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-remove form-control-feedback"&ndash;&gt;-->
+<!--&lt;!&ndash;ng-show="loginForm.username.$invalid &&loginForm.username.$dirty"></span>&ndash;&gt;-->
+<!--<span class="login-user-icon"></span>-->
+<!--</div>-->
+
+<!--<div class="form-group"-->
+<!--ng-class="{'has-success': loginForm.password.$valid && loginForm.password.$dirty, 'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">-->
+<!--&lt;!&ndash;实现了 BootStrap 里面 has-success 样式 和 has-error 样式的转换。 ！&ndash;&gt;-->
+<!--<input class="form-control input-lg pd-left-50 login-psd" placeholder="密码"-->
+<!--name="password"-->
+<!--type="password" ng-model="vm.pwd" minlength="6" maxlength="16"-->
+<!--ng-pattern="/^\w{6,16}$/" required>-->
+<!--&lt;!&ndash;\w	匹配包括下划线的任何单词字符。等价于“[A-Za-z0-9_]”。&ndash;&gt;-->
+<!--<span class="login-psd-icon "></span>-->
+<!--</div>-->
+<!--&lt;!&ndash;验证账号&ndash;&gt;-->
+<!--<div class="checkbox"-->
+<!--ng-show="loginForm.username.$invalid &&loginForm.username.$dirty">-->
+<!--* 请输入5位到16位的由英文或数字组成的账号-->
+<!--</div>-->
+<!--&lt;!&ndash;验证密码&ndash;&gt;-->
+<!--&lt;!&ndash;ng-if="loginForm.password.$invalid && loginForm.password.$touched">&ndash;&gt;-->
+<!--<div class="checkbox"-->
+<!--ng-show="loginForm.password.$invalid && loginForm.password.$dirty">-->
+<!--&lt;!&ndash;&& !focus&ndash;&gt;-->
+<!--* 请输入6到16位数字、字母或下划线组成的密码-->
+<!--</div>-->
+<!--<div class="checkbox">-->
+<!--<p class="text-danger">{{vm.errorTip}}</p>-->
+<!--</div>-->
+<!--&lt;!&ndash;使用 controllerAs 时， 可以将 Controller 定义成 Javascript 的原型类， 在 HTML 视图中直接绑定原型类的属性和方法。-->
+<!--这样做的优点是：-->
+<!--可以使用 Javascript 的原型类， 我们可以使用更加高级的 ES6 或者 TypeScript 来编写 Controller ；-->
+<!--避开了所谓的 child scope 原型继承带来的一些问题-->
+<!--controller as 方式解决了父子$scope带来的混乱&ndash;&gt;-->
+<!--<button class="btn btn-lg btn-submit btn-block login-btn" ng-click="vm.submit()"-->
+<!--ng-disabled="loginForm.$invalid">登录-->
+<!--&lt;!&ndash;login-btn&ndash;&gt;-->
+<!--</button>-->
+<!--&lt;!&ndash;在提交按钮中，我们添加了指令ng-disabled来控制该按钮的有效性，其值等于myForm.$invalid，如果在表单中，只要有不符合输入验证的，则该值便为false，自然提交按钮便无效。&ndash;&gt;-->
+<!--&lt;!&ndash;</fieldset>&ndash;&gt;-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div class="bg-img">-->
+<!--<div class="login-container container" ng-click="vm.run(this,{opacity:100},1000)">-->
+<!--&lt;!&ndash;opacity属性指定了一个对象或一组对象的透明度，也就是说，元素后面的背景的透过率。&ndash;&gt;-->
+<!--<div class="row">-->
+<!--<div class="col-md-4 col-md-offset-4">-->
+<!--&lt;!&ndash;使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素&ndash;&gt;-->
+<!--&lt;!&ndash;增加了左侧的边距（margin）。例如，.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度。&ndash;&gt;-->
+<!--<div class="panel panel-default">-->
+<!--<div>-->
+<!--<img src="/images/SBAdmin/login-logo.png" class="login-circle-img">-->
+<!--</div>-->
+<!--<div class="panel-body login-panel">-->
+<!--<form role="form" class="ng-pristine ng-valid">-->
+<!--<fieldset>-->
+<!--<div class="form-group">-->
+<!--<input class="form-control input-lg pd-left-50 login-user" placeholder="用户名"-->
+<!--name="username" type="text" autofocus="" ng-model="vm.name" required>-->
+<!--<div class="login-user-icon"></div>-->
+<!--</div>-->
+<!--<div class="form-group ">-->
+<!--<input class="form-control input-lg pd-left-50 login-psd" placeholder="密码"-->
+<!--name="password" type="password" ng-model="vm.pwd" required>-->
+<!--<div class="login-psd-icon "></div>-->
+<!--</div>-->
+<!--<div class="checkbox">-->
+<!--<p class="text-danger">{{vm.errorTip}}</p>-->
+<!--</div>-->
+<!--<button class="btn btn-lg btn-submit btn-block login-btn" ng-click="vm.submit()">登录-->
+<!--</button>-->
+<!--</fieldset>-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

@@ -1,0 +1,133 @@
+<div class="panel panel-default">
+    <form class="form-horizontal">
+        <div class="panel-body">
+            <div class="row pd-bottom-2">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">修改时间</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="20" bs-datepicker autoclose="true"
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   data-max-date="{{vm.searchParams.endAt}}"
+                                   ng-model="vm.searchParams.startAt">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4 text-center">至</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" size="20" bs-datepicker autoclose="true"
+                                   data-date-format="yyyy-MM-dd" data-date-type="number"
+                                   ng-model="vm.searchParams.endAt" data-min-date="{{vm.searchParams.startAt}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4 word-spacing-25">类 型</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.type">
+                                <option value="">全部</option>
+                                <option value="0">首页Banner</option>
+                                <option value="1">找职位Banner</option>
+                                <option value="2">找精英Banner</option>
+                                <option value="3">行业大图</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pd-bottom-2">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4 word-spacing-25">状 态</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.status">
+                                <option value="">全部</option>
+                                <option value="2">上线</option>
+                                <option value="1">草稿</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="col-md-4">-->
+                <!--<div class="form-group">-->
+                <!--<label class="col-md-4 control-label word-spacing-25">名 称</label>-->
+                <!--<div class="col-md-8">-->
+                <!--<input class="form-control" type="text" ng-model="vm.searchParams.name">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                <!--<div class="form-group">-->
+                <!--<label class="control-label col-md-4">创建者</label>-->
+                <!--<div class="col-md-8">-->
+                <!--<input type="text" class="form-control" ng-model="vm.searchParams.createBy">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+            </div>
+            <div class="row pd-bottom-2">
+                <div class="col-md-4 pull-right text-right">
+                    <!--将 搜索和清空 写成一个自定义指令-->
+                    <search params="vm.searchParams"></search>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <strong>Article列表</strong>
+        <button type="button" class="btn btn-xs btn-info pull-right margin-left-10" ui-sref="field.articleDetail">
+            +新增
+        </button>
+        <!--<button type="button" class="btn btn-xs btn-danger pull-right" ng-click="vm.saveSort()" ng-show="vm.searchParams.type=='0'||vm.searchParams.type=='1'||vm.searchParams.type=='2'">保存排序</button>-->
+    </div>
+    <div class="panel-body table-responsive">
+        <table class="table table-striped add-table-border" ng-app="sortableApp" ng-controller="sortableController">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>标题</th>
+                <th>类型</th>
+                <th>发布时间</th>
+                <th>修改时间</th>
+                <th>发布者</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody ui-sortable>
+            <tr ng-repeat="item in vm.articleList track by $index">
+                <td>{{$index+1}}</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.type|articleTypeFilter }}</td>
+                <td>
+                    <div>{{ item.createAt|date:'yyyy-MM-dd'}}</div>
+                    <div>{{ item.createAt|date:'HH:mm:ss'}}</div>
+                </td>
+                <td>
+                    <div>{{ item.updateAt|date:'yyyy-MM-dd'}}</div>
+                    <div>{{ item.updateAt|date:'HH:mm:ss'}}</div>
+                </td>
+                <td>{{ item.author }}</td>
+                <td>{{item.status|articleStatusFilter}}</td>
+                <td>
+                    <a type="button" class="btn btn-sm btn-warning"
+                       ng-click="vm.changeArticleStatus(item.id,item.status)">{{item.status|articleStatusChangeFilter}}</a>
+                    <a type="button" class="btn btn-sm btn-info" ui-sref="field.articleDetail({id:item.id})">编辑</a>
+                    <a type="button" class="btn btn-sm btn-danger" ng-click="vm.deleteArticle(item.id,$index)">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--<div class="checkbox">-->
+    <p class="text-center text-danger">{{vm.warning}}</p>
+    <!--</div>-->
+    <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+</div>

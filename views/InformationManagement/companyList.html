@@ -1,0 +1,156 @@
+<div class="form-horizontal">
+    <div class="panel panel-default">
+        <!--搜索框-->
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">公司名称</label>
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   type="text"
+                                   ng-model="vm.searchParams.name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">公司行业</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.industry">
+                                <option value="">全部</option>
+                                <option value="0">移动互联网</option>
+                                <option value="1">电子商务</option>
+                                <option value="2">企业服务</option>
+                                <option value="3">O2O</option>
+                                <option value="4">教育</option>
+                                <option value="5">金融</option>
+                                <option value="6">游戏</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">产品名称</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" ng-model="vm.searchParams.product">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">认证状态</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.approved">
+                                <option value="">全部</option>
+                                <option value="0">未认证</option>
+                                <option value="1">已认证</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">冻结状态</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.freezed">
+                                <option value="">全部</option>
+                                <option value="0">正常</option>
+                                <option value="1">冻结</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">融资规模</label>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="vm.searchParams.financing">
+                                <option value="">全部</option>
+                                <option value="0">无需融资</option>
+                                <option value="1">天使轮</option>
+                                <option value="2">A轮</option>
+                                <option value="3">B轮</option>
+                                <option value="4">C轮</option>
+                                <option value="5">D轮及以上</option>
+                                <option value="6">上市公司</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--地区选择-->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="control-label col-md-2 word-spacing-25">地 区</label>
+                        <div class="col-md-10">
+                            <city-select select-result="vm.searchParams.address"></city-select>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-right ">
+                    <search params="vm.searchParams"></search>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <!--公司列表-->
+    <div class="panel-heading">
+        <strong>公司列表</strong>
+        <button
+                class="btn btn-primary btn-xs pull-right"
+                ui-sref="field.companyDetail">新增
+        </button>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped add-table-border">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>公司名称</th>
+                    <th>公司行业</th>
+                    <th>地区</th>
+                    <th>融资规模</th>
+                    <th>认证状态</th>
+                    <th>冻结状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="company in vm.companyList track by $index">
+                    <td>{{$index+1}}</td>
+                    <td>{{company.name}}</td>
+                    <td>{{company.industryList[0]|companyIndustryFilter}}</td>
+                    <td>{{company.city|cityFilter}}-{{company.county|countyFilter}}</td>
+                    <td>{{company.financing|companyFinancingFilter}}</td>
+                    <td>{{company.approved|approvedStatusFilter}}</td>
+                    <td>{{company.freezed|freezedStatusFilter}}</td>
+                    <td>
+                        <a class="btn btn-sm"
+                           ui-sref="field.positionList({companyId:company.id,companyName:company.name})">职位</a>
+                        <a class="btn btn-sm" href="" ng-click="vm.approveCompany(company.id,1,company.approved)">{{company.approved|changeApprovedStatusFilter}}</a>
+                        <a class="btn btn-sm" ui-sref="field.companyDetail({companyId:company.id})">编辑</a>
+                        <a class="text-danger btn btn-sm" href=""
+                           ng-click="vm.freezeCompany(company.id,0,company.freezed)">{{company.freezed|changeFreezedStatusFilter}}</a>
+                        <a class="text-danger btn-sm btn" href="" ng-click="vm.delCompany(company.id,$index)">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+    </div>
+</div>
+
+

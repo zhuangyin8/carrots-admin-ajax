@@ -1,0 +1,24 @@
+<!--
+    JavaScript 提供三种类型的弹出框,即"警告","提示"和"确认"框
+    警告框
+    当你希望确保信息通过用户时,将使用警告框
+    当警告框弹出时,用户必须单机"确定"继续
+    警告函数采用单个参数,即警告框中的文字
+    要在警告框中使用反斜杠(\)后跟字符n,显示换行符,
+-->
+<!--警告模态框-->
+<div class="modal ng-scope top am-fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">警告</h3>
+            </div>
+            <div class="modal-body">
+                {{content}}
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="row pd-top-2">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                角色编辑
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="rolename" class="col-sm-2 control-label">角色名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="rolename" placeholder="role name"
+                                           ng-model="vm.name">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">权限</label>
+                                <div class="col-sm-10">
+                                    <ul class="role-tree">
+                                        <li>
+                                            <label for="all"><input type="checkbox" name="" id="all"
+                                                                    ng-model="vm.moduleList.$selected"
+                                                                    ng-change="vm.changeAll()"/>全选/全不选</label>
+                                        </li>
+                                        <li ng-repeat="list in vm.moduleList">
+                                            <label for="{{list.id}}" class="col-sm-offset-1"><input type="checkbox"
+                                                                                                    name=""
+                                                                                                    id="{{list.id}}"
+                                                                                                    ng-model="list.$checked"
+                                                                                                    ng-change="vm.changeModule($index)"/>{{list.name}}</label>
+                                            <div class="checkbox" ng-repeat="li in list.nodes">
+                                                <label class="col-sm-3 col-sm-offset-2"
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].use}">
+                                                    <input type="checkbox"
+                                                           ng-model="vm.moduleList[$parent.$index].nodes[$index].use"
+                                                           ng-change="vm.changeSubModule($parent.$index, $index)">{{li.name}}&nbsp;&nbsp;&nbsp;
+                                                </label>
+
+                                                <label for="{{'create' + [$parent.$index] + [$index]}}"
+                                                       ng-hide="li.id==87"
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].create}"><input
+                                                        type="checkbox" name=""
+                                                        id="{{'create' + [$parent.$index] + [$index]}}"
+                                                        ng-model="vm.moduleList[$parent.$index].nodes[$index].create"/>新增&nbsp;</label>
+                                                <label for="{{'update' + [$parent.$index] + [$index]}}"
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].update}"><input
+                                                        type="checkbox" name=""
+                                                        id="{{'update' + [$parent.$index] + [$index]}}"
+                                                        ng-model="vm.moduleList[$parent.$index].nodes[$index].update"/>编辑&nbsp;</label>
+                                                <label for="{{'delete' + [$parent.$index] + [$index]}}"
+                                                       ng-hide="li.id==87"
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].delete}"><input
+                                                        type="checkbox" name=""
+                                                        id="{{'delete' + [$parent.$index] + [$index]}}"
+                                                        ng-model="vm.moduleList[$parent.$index].nodes[$index].delete"/>删除&nbsp;</label>
+                                                <label for="{{'sort' + [$parent.$index] + [$index]}}"
+                                                       ng-show="li.id==114||li.id==113||li.id==123"
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].sort}"><input
+                                                        type="checkbox" name=""
+                                                        id="{{'sort' + [$parent.$index] + [$index]}}"
+                                                        ng-model="vm.moduleList[$parent.$index].nodes[$index].sort"/>排序&nbsp;</label>
+
+                                            </div>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                        <button class="btn btn-success" ng-click="vm.saveOrUpdate(vm.id)">保存</button>
+                        <button class="btn btn-danger" ui-sref="field.role">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

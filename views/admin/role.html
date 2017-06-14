@@ -1,0 +1,36 @@
+<div class="row pd-top-2">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                角色列表
+                <div class="btn-group pull-right">
+                    <button class="btn btn-primary btn-xs" ui-sref="field.roleDetail">
+                        <i class="fa fa-plus-square fa-fw"></i>新增角色
+                    </button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>角色</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="li in vm.list">
+                        <td>{{li.id}}</td>
+                        <td>{{li.name}}</td>
+                        <td>
+                            <button class="btn btn-default btn-xs"  ui-sref="field.roleDetail({id: li.id})">编辑</button>
+                            <button class="btn btn-danger btn-xs"  ng-click="vm.delete(li.id)">删除</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <paging ng-if="vm.page" next="{{vm.page}}"></paging>
+        </div>
+    </div>
+</div>

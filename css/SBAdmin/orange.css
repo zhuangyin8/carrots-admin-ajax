@@ -1,0 +1,90 @@
+/*正文背景*/
+.wrapper {
+    background: url("/images/login-bg-orange.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    min-height: 100vh;
+
+}
+
+/*login页背景*/
+.bg-img {
+    background: url("/images/login-bg-orange.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 426px;
+}
+
+/*登录页输入框输入的文字样式*/
+.login-user, .login-psd {
+    color: #fd9f2a;
+}
+
+/*用户角色 用户名 退出按钮 样式*/
+.navbar-top-links .dropdown a {
+    color: #feb454;
+}
+
+/*sidebar选中后颜色*/
+.navActive {
+    background: #feae45;
+}
+
+/*登陆页按钮样式*/
+.btn-submit {
+    color: #fff;
+    background-color: #fd9f2a;
+    border-color: #fd9f2a;
+}
+
+.btn-submit:focus,
+.btn-submit.focus {
+    color: #fff;
+    background-color: #f89a2a;
+    border-color: #f89a2a;
+}
+
+.btn-submit:hover {
+    color: #fff;
+    background-color: #e88e29;
+    border-color: #e88e29;
+}
+
+/*input框 按钮*/
+.form-control:focus {
+    border-color: #fd9f2a;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(253, 159, 42, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(253, 159, 42, 0.6);
+}
+
+/*顶栏 brand*/
+.topbar-brand {
+    /*
+    在 CSS 中对元素进行水平居中是非常简单的：
+    如果它是一个行内元素，就对它的父元素应用 text-align: center；
+    如果它是一个块级元素，就对它自身应用 margin: auto。
+    */
+    text-align: center;
+    /*增加 text-align: center; 来实现文字的水平居中。*/
+    float: left;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    /*height=line-height 垂直居中*/
+    color: white;
+    border-bottom: solid #fdbb6b 1px;
+    width: 250px;
+}
+
+/*sidebar hover、active样式*/
+.side > li > a:focus, .side > li > a:hover {
+    text-decoration: none;
+    background-color: #feae45;
+}
+
+.side > .nav-first-level.active > a {
+    text-decoration: none;
+    border-left: solid white;
+}

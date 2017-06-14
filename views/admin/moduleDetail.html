@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{(!!vm.id)?"模块编辑":"模块新增"}}</div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">名称*</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-model="vm.data.name" placeholder="请输入名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">MenuId</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-model="vm.data.menuID" placeholder="请输入meunID,只能是英文">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">URL地址</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-model="vm.data.url" placeholder="请输入模块对应url地址">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">父模块ID</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-model="vm.data.parentID" placeholder="请输入父模块ID">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">模块类别</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-model="vm.data.type" placeholder="请输入模块类别">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-9 col-xs-offset-2">
+                    <div class="col-xs-4">
+                        <button class="btn btn-default btn-block" ng-click="vm.saveOrUpdate()">保存</button>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="btn btn-default btn-block" ui-sref="field.module">取消</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

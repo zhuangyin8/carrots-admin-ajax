@@ -1,0 +1,822 @@
+.navbar {
+    margin: 0;
+}
+
+.margin-left-2 {
+    margin-left: 2%;
+}
+
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.btn-margin {
+    margin-right: 10px;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.form-search .form-group {
+    margin-top: 10px;
+}
+
+.form-search label {
+    width: 7em;
+}
+
+.role-tree {
+    padding: 0 0 0 16px;
+}
+
+.role-tree li {
+    padding-top: 7px;
+    line-height: 24px;
+}
+
+.role-tree-child {
+    list-style: none;
+}
+
+.role-tree-child li {
+    padding-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .margin-left {
+        margin-left: 10%;
+    }
+
+    .margin-no {
+        margin: 0;
+    }
+}
+
+.pd-top-bottom-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.pd-top-20 {
+    padding-top: 20px;
+}
+
+.pd-top-66 {
+    padding-top: 66px;
+}
+
+.pd-left-10 {
+    padding-left: 10px;
+}
+
+.pd-left-50 {
+    padding-left: 50px;
+}
+
+.pd-bottom-20 {
+    padding-bottom: 20px;
+}
+
+.pd-bottom-15 {
+    padding-bottom: 15px;
+}
+
+.pd-0 {
+    padding: 0;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-b0 {
+    margin-bottom: 0 !important;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+.margin-top-25 {
+    margin-top: 25px;
+}
+
+.margin-top-35 {
+    margin-top: 35px;
+}
+
+.alert-title {
+    padding-top: 10px;
+    padding-left: 0;
+    padding-bottom: 10px;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.label-summary {
+    width: 12.5%;
+}
+
+.input-summary {
+    width: 84.65%;
+}
+
+.text-area.form-control {
+    height: 100px;
+    resize: none;
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .label-layout {
+        width: 12.5%;
+    }
+
+    .input-layout {
+        width: 84.65%;
+    }
+
+}
+
+/* alert */
+.modal-backdrop.am-fade {
+    opacity: .5;
+    transition: opacity .15s linear;
+}
+
+.ng-enter {
+    opacity: 0;
+}
+
+.ng-enter-active {
+    opacity: .5;
+}
+
+.ng-leave {
+    opacity: .5;
+}
+
+.ng-leave-active {
+    opacity: 0;
+}
+
+/* 模态框 */
+.table-model {
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.table-model b, .table-model span {
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.table-model div:nth-of-type(2n+1) {
+    background: #f5f5f5;
+}
+
+.border {
+    border: 1px solid #ddd;
+}
+
+.border-top {
+    border-top: 1px solid #ddd;
+}
+
+.border-bottom, .bdBottom {
+    border-bottom: 1px solid #ddd;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.bg-ddd, .bgActive {
+    background: #ddd !important;
+}
+
+.text-top {
+    vertical-align: top;
+}
+
+.fa-times.mg-top-3 {
+    margin-top: 3px;
+    color: #444;
+}
+
+.optionEllipsis {
+    display: inline-block;
+    max-width: 70%;
+    height: 17px;
+    padding-bottom: -2px;
+    vertical-align: top;
+}
+
+.optionEllipsis:after {
+    position: absolute;
+    right: 60px;
+    top: 31px;
+    height: 10px;
+    content: '...';
+}
+
+.relative {
+    position: relative;
+}
+
+.text-clip {
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+/*.text-clip:hover {
+    text-overflow:inherit;
+    overflow:visible;
+    height: auto;
+}*/
+/*
+ 风控-申请资料
+*/
+.apply img {
+    width: 80px;
+    max-height: 80px;
+}
+
+.input-group-sum {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: -8px;
+}
+
+.btn-download {
+    display: inline-block;
+    width: 15%;
+    line-height: 30px;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.area-select {
+    width: 25%;
+}
+
+@media only screen and (max-width: 991px) {
+    .area-select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .width64 {
+        width: 64%;
+    }
+
+    .margin-left {
+        margin-left: -8.5%;
+    }
+
+    .width200 {
+        width: 230%;
+    }
+
+}
+
+/*水印*/
+.waterMark {
+    display: inline-block;
+    width: 300px;
+    line-height: 250px;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+}
+
+.clear-borderTop {
+    border-top: none !important;
+}
+
+/*添加表格边框*/
+.add-table-border {
+    border: 1px solid #eeeeee;
+}
+
+/*
+ * 表格拖拽样式
+ * table drag and drop style
+ */
+.ul-table-head {
+    min-height: 38px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.ul-table-head li {
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    overflow: hidden;
+}
+
+.ul-table-head li div {
+    padding: 8px;
+    float: left;
+    min-height: 38px;
+}
+
+.ul-table[dnd-list] {
+    min-height: 38px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #dddddd;
+    overflow: hidden;
+}
+
+.ul-table[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+.ul-table[dnd-list] .dndPlaceholder {
+    display: block;
+    background-color: #ddd;
+    min-height: 38px;
+}
+
+.ul-table[dnd-list] li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    margin-bottom: -1px;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+.ul-table[dnd-list] li.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.ul-table li > div {
+    padding: 8px;
+    display: inline-block;
+    margin-right: -4px;
+    min-height: 38px;
+    word-wrap: break-word;
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+.ul-table, .ul-table-head {
+    text-align: center;
+}
+
+/*拖拽样式结束*/
+.width5 {
+    width: 5%;
+}
+
+.width6 {
+    width: 6%;
+}
+
+.width8 {
+    width: 8%;
+}
+
+.width9 {
+    width: 9%;
+}
+
+.width10 {
+    width: 10%;
+}
+
+.width12 {
+    width: 12%;
+}
+
+.width13 {
+    width: 13%;
+}
+
+.width15 {
+    width: 15%;
+}
+
+.width20 {
+    width: 20%;
+}
+
+.width18 {
+    width: 18%;
+}
+
+.width25 {
+    width: 25% !important;
+}
+
+.width35 {
+    width: 35% !important;
+}
+
+.width40 {
+    width: 40% !important;
+}
+
+.btn_color {
+    background-color: forestgreen;
+}
+
+.table > tbody th {
+    font-weight: normal;
+}
+
+/*单元格图片及垂直居中*/
+td {
+    vertical-align: middle !important;
+    max-width: 180px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+th {
+    vertical-align: middle !important;
+}
+
+/*img {*/
+/*width: 100%;*/
+/*}*/
+/*申请*/
+.dong {
+    margin-top: 30px;
+}
+
+/*课件列表的样式*/
+.lessonlist {
+    border: 1px solid #f5f5f5;
+    border-radius: 3px;
+    width: 30%;
+    float: left;
+    margin: 2px 12px 2px -10px !important;
+    height: 100px;
+    background: #f5f5f5;
+}
+
+.selected {
+    background: #aaaaaa;
+}
+
+/*表单验证错误提示*/
+.error {
+    border: solid #a10 1px;
+    border-radius: 4px;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ellipsis:hover {
+    text-overflow: clip;
+
+}
+
+/*
+.ellipsis-row-2{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;;
+}
+
+.boxReset {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+*/
+
+.padding-top-0 {
+    padding-top: 0 !important;
+}
+
+.padding-0 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.margin-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pd-left-right-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px !important;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px !important;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.margin-right-20 {
+    margin-right: 20px;
+}
+
+.margin-left-20 {
+    margin-left: 20px !important;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.margin-right-2 {
+    margin-right: 2%;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1%;
+}
+
+.margin-left-1 {
+    margin-left: 1%;
+}
+
+.star {
+    color: red !important;
+}
+
+.super {
+    padding-right: 10px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.fake-button {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin: 0 10px
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.checkbox {
+    color: #a94442;
+}
+
+/*.text-danger {*/
+/*color: red;*/
+/*}*/
+
+/*隐藏checkbox*/
+.hidden {
+    opacity: 0;
+    position: absolute;
+    /*脱离文档流*/
+}
+
+/*图表*/
+.signchart-wrap {
+    width: 100%;
+    height: 500px;
+    padding-top: 30px;
+}
+
+.grey {
+    background: #f5f5f5;
+}
+
+.white {
+    background: #fff !important;
+}
+
+/*时间插件宽度*/
+.dropdown-menu {
+    width: 320px;
+}
+
+/*单选框*/
+input[type="radio"] + span {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: sub;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border: solid 1px #034F84;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked + span {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: sub;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border: solid 6px #1277dc;
+    border-radius: 50%;
+}
+
+/*预格式化文本，用来显示用户管理列表中的时间*/
+pre {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    background-color: inherit !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: inherit;
+}
+
+/*分页样式*/
+
+.pagination li > a {
+    margin: 0 5px;
+    cursor: pointer
+}
+
+.paginationCenter {
+    padding-right: 20px;
+    line-height: 34px;
+}
+
+.paginationGo {
+    line-height: 30px;
+    width: 50px;
+}
+
+/* 表格内容居中 */
+.table th,
+.table td {
+    text-align: center;
+}
+
+/*表格灰头*/
+
+/* 详情部分 两边padding */
+.detail-padding-15 {
+    padding: 10% 15%;
+}
+
+.detail-padding-5 {
+    padding: 5% 5%;
+}
+
+.renxing {
+    width: auto;
+    display: inline-block;
+}
+
+/*线条渐变按钮*/
+.btn-outline {
+    color: inherit;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+
+/*线条渐变按钮  结束*/
+
+/*input type="number"移除右侧上下小按钮*/
+/*chrome*/
+/*input::-webkit-outer-spin-button,*/
+/*input::-webkit-inner-spin-button {*/
+/*-webkit-appearance: none !important;*/
+/*margin: 0;*/
+/*}*/
+
+/*firefox*/
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.font-size0 {
+    font-size: 0;
+}
+
+.word-spacing-25 {
+    word-spacing: 25px;
+}
+
+/*按钮不可点击时的状态*/
+/*a[disabled] {*/
+/*cursor: default;*/
+
+/*}*/
+
+/*表单没有验证通过时,登录按钮的样式*/
+button[disabled] {
+    color: #666;
+    cursor: not-allowed;
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+/*CSS align-items 属性以与justify-content相同的方式在侧轴方向上将当前行上的弹性元素对齐。*/
+/*flex-start  元素向侧轴起点对齐。*/
+
+/*#editor-trigger {*/
+/*width: 100%;*/
+/*height: 200px;*/
+/*}*/

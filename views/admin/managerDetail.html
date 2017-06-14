@@ -1,0 +1,69 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{(!!vm.id)?"账户管理":"账户新增"}}</div>
+    <div class="panel-body">
+        <form class="form-horizontal" name="formData" novalidate="novalidate">
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">登录名</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="name" ng-model="vm.data.name" placeholder="请输入登录名"
+                           required>
+                    <div ng-class="{error:formData.name.$invalid}" ng-messages="formData.name.$error"
+                         ng-if="formData.name.$touched">
+                        <div ng-message="required"><i class="margin-right-3 error">*</i>请输入登录名</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">手机号码</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-minlength="11" ng-maxlength="11"
+                           ng-model="vm.data.mobile"
+                           ng-disabled="vm.id" placeholder="请输入手机号码" name="mobile">
+                    <span class="error" ng-show="formData.$dirty && formData.mobile.$invalid">请输入11位号码</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">密码</label>
+                <div class="col-xs-9">
+                    <input type="password" class="form-control" ng-model="vm.data.pwd" placeholder="请输入密码"
+                           name="code" ng-minlength="6" ng-maxlength="16" required>
+                    <span class="error"
+                          ng-show="formData.code.$dirty && (formData.code.$error.maxlength || formData.code.$error.minlength)">
+                    请输入6~16位密码</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">密码确认</label>
+                <div class="col-xs-9">
+                    <input type="password" class="form-control" ng-model="vm.data.newPwd" placeholder="请输入密码"
+                           name="recode" required>
+                    <span class="error"
+                          ng-show="vm.data.newPwd && formData.code.$dirty && formData.recode.$dirty && vm.data.newPwd!==vm.data.pwd">密码输入不一致</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2 text-right">角色</label>
+                <div class="col-xs-9">
+                    <select class="form-control" style="min-width: 160px" ng-model="vm.data.roleID">
+                        <option value="">请选择</option>
+                        <option ng-repeat="role in vm.roleList" ng-value="role.id" ng-selected="vm.rid == role.id">
+                            {{role.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-9 col-xs-offset-2">
+                    <div class="col-xs-4">
+                        <button class="btn btn-default btn-block" ng-click="vm.saveOrUpdate()"
+                                ng-disabled="formData.$invalid">保存
+                        </button>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="btn btn-default btn-block" ui-sref="field.manager">取消</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

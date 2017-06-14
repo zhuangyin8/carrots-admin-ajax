@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <b>模块管理</b>
+        <button class="btn btn-xs btn-default pull-right" ui-sref="field.moduleDetail">+新增</button>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive border">
+            <table class="table table-striped text-center">
+                <thead>
+                <tr>
+                    <th class="text-center">自增长ID</th>
+                    <th class="text-center">名称</th>
+                    <th class="text-center">模块对应url地址</th>
+                    <th class="text-center">父模块ID</th>
+                    <th class="text-center">模块类型</th>
+                    <th class="text-center">数据更新时间</th>
+                    <th class="text-center">更新人ID</th>
+                    <th class="text-center">数据创建时间</th>
+                    <th class="text-center">创建者ID</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in vm.list">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.url}}</td>
+                    <td>{{item.parentID}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.updateAt|date:'yyyy-MM-dd'}}<br>{{item.updateAt|date:'HH:mm:ss'}}</td>
+                    <td>{{item.updateBy}}</td>
+                    <td>{{item.createAt|date:'yyyy-MM-dd'}}<br>{{item.createAt|date:'HH:mm:ss'}}</td>
+                    <td>{{item.createByName}}</td>
+                    <td>
+                        <button class="btn btn-xs btn-success"  ui-sref="field.moduleDetail({id: item.id})">编辑</button>
+                        <button class="btn btn-xs btn-danger"  ng-click="vm.delete(item.id)">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
+    </div>
+</div>

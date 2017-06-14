@@ -1,0 +1,424 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>{{vm.data.company.name}}详细信息</strong>
+        <select class="pull-right"
+                ng-init="vm.data.company.approved = 0"
+                ng-model="vm.data.company.approved">
+            <option value="">请选择</option>
+            <option value=0>未认证</option>
+            <option value=1>已认证</option>
+        </select>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" name="theForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">*公司名称</label>
+                        <div class="col-md-8">
+                            <input type="text"
+                                   class="form-control"
+                                   name="companyName"
+                                   required
+                                   maxlength="16"
+                                   ng-class="{'error':theForm.companyName.$invalid && theForm.companyName.$touched}"
+                                   ng-model="vm.data.company.name"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">*公司Slogan</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text"
+                                   name="companySlogan"
+                                   maxlength="500"
+                                   required
+                                   ng-class="{'error':theForm.companySlogan.$invalid && theForm.companySlogan.$touched}"
+                                   ng-model="vm.data.company.slogan"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">*公司人数</label>
+                        <div class="col-md-8">
+                            <input class="form-control"
+                                   onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                   onafterpaste="this.value=this.value.replace(/\D/g,'')"
+                                   name="totalnum"
+                                   type="number"
+                                   required
+                                   ng-class="{'error':theForm.totalnum.$invalid && theForm.totalnum.$touched}"
+                                   ng-model="vm.data.company.totalNum"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">*融资规模</label>
+                        <div class="col-md-8">
+                            <select class="form-control"
+                                    name="companyScale"
+                                    required
+                                    ng-class="{'error':theForm.companyScale.$invalid && theForm.companyScale.$touched}"
+                                    ng-model="vm.data.company.financing"
+                            >
+                                <option value="">请选择</option>
+                                <option value="0">无需融资</option>
+                                <option value="1">天使轮</option>
+                                <option value="2">A轮</option>
+                                <option value="3">B轮</option>
+                                <option value="4">C轮</option>
+                                <option value="5">D轮以上</option>
+                                <option value="6">上市公司</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-md-2 word-spacing-25">*地 区</label>
+                        <div class="col-md-7">
+                            <city-select
+                                    ng-if="!vm.companyId || vm.area.province || vm.data.company.id "
+                                    ng-class="{'error':theForm.province.$invalid && theForm.province.$touched ||
+                                    theForm.city.$invalid && theForm.province.$touched||
+                                    theForm.district.$invalid && theForm.province.$touched}"
+                                    select-result="vm.area">
+                            </city-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label word-spacing-25">*行 业</label>
+                        <div class="col-md-10">
+                            <div
+                                    isteven-multi-select
+                                    input-model="vm.companyIndustryGroup"
+                                    output-model="vm.selectedIndustryGroup"
+                                    button-label="icon name"
+                                    item-label="icon name maker"
+                                    tick-property="ticked"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--图片上传1-->
+            <div class="row form-group">
+                <label class="col-md-2 control-label">*公司Logo</label>
+                <div class="col-md-10 padding-0">
+                    <div class="col-md-12 ">
+                        <label class="btn btn-primary" for="file1">选择文件</label>
+                        <input id="file1"
+                               style="display: none"
+                               type="file"
+                               nv-file-select
+                               uploader="vm.uploader1"
+                        />
+                    </div>
+                    <div class="col-md-12">
+                        <img ng-src="{{vm.data.company.logo}}" alt="配图预览" class="img-responsive">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <th>图片名</th>
+                                <th>文件大小</th>
+                                <th>进度</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in vm.uploader1.queue track by $index" class="ng-scope"
+                                    ng-if="$first">
+                                    <td><strong class="ng-binding">{{item.file.name}}</strong></td>
+                                    <td ng-show="vm.uploader1.isHTML5" nowrap="" class="ng-binding">{{
+                                        item.file.size/1024/1024 | number:2 }} MB
+                                    </td>
+                                    <td ng-show="vm.uploader1.isHTML5">
+                                        <div class="progress" style="margin-bottom: 0;">
+                                            <div class="progress-bar" role="progressbar"
+                                                 ng-style="{ 'width': item.progress + '%' }"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                                <span ng-show="item.isSuccess"><i
+                                                        class="glyphicon glyphicon-ok"></i></span>
+                                        <span ng-show="item.isCancel"><i
+                                                class="glyphicon glyphicon-ban-circle"></i></span>
+                                        <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                    </td>
+                                    <td nowrap="">
+                                        <button type="button" class="btn btn-success btn-xs"
+                                                ng-click="item.upload()"
+                                                ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                            <span class="glyphicon glyphicon-upload"></span> 上传
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-xs"
+                                                ng-click="item.remove(); vm.clearImg()">
+                                            <span class="glyphicon glyphicon-trash"></span> 删除
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-md-2">*公司介绍</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" required ng-model="vm.data.company.summary" rows="6"
+                              maxlength="1000"></textarea>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class=" control-label col-md-2">公司标签</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input class="form-control"
+                               maxlength="10"
+                               ng-model="vm.tag" type="text">
+                        <div class="input-group-addon" ng-click="vm.addTag()">+</div>
+                    </div>
+                </div>
+                <span class="text-danger" ng-hide="vm.isTagValid">标签内容为空，或标签内容重复</span>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="inline-block margin-10 pd-top-bottom-10"
+                         required
+                         ng-repeat="item in vm.data.tagList track by $index">
+                        <div class=" label label-info  relative inline-block pd-top-bottom-10">{{item.tag}}
+                            <div class="col-md-1 pull-right" ng-click="vm.delTag($index)">
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--公司产品-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>公司产品</strong>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">产品名称</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text"
+                                           maxlength="16"
+                                           ng-model="vm.data.productList[0].name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">产品Slogan</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text"
+                                           maxlength="500"
+                                           ng-model="vm.data.productList[0].slogan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-2 control-label">产品Logo</label>
+                        <div class="col-md-10 padding-0">
+                            <div class="col-md-12 ">
+                                <label class="btn btn-primary" for="file2">选择文件</label>
+                                <input id="file2"
+                                       style="display: none"
+                                       type="file" nv-file-select uploader="vm.uploader2"
+                                />
+                            </div>
+                            <div class="col-md-12">
+                                <img ng-src="{{vm.data.productList[0].logo}}" alt="配图预览" class="img-responsive">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <th>图片名</th>
+                                        <th>文件大小</th>
+                                        <th>进度</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="item in vm.uploader2.queue track by $index" class="ng-scope"
+                                            ng-if="$first">
+                                            <td><strong class="ng-binding">{{item.file.name}}</strong></td>
+                                            <td ng-show="vm.uploader2.isHTML5" nowrap="" class="ng-binding">{{
+                                                item.file.size/1024/1024 | number:2 }} MB
+                                            </td>
+                                            <td ng-show="vm.uploader2.isHTML5">
+                                                <div class="progress" style="margin-bottom: 0;">
+                                                    <div class="progress-bar" role="progressbar"
+                                                         ng-style="{ 'width': item.progress + '%' }"></div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-show="item.isSuccess"><i
+                                                        class="glyphicon glyphicon-ok"></i></span>
+                                                <span ng-show="item.isCancel"><i
+                                                        class="glyphicon glyphicon-ban-circle"></i></span>
+                                                <span ng-show="item.isError"><i
+                                                        class="glyphicon glyphicon-remove"></i></span>
+                                            </td>
+                                            <td nowrap="">
+                                                <button type="button" class="btn btn-success btn-xs"
+                                                        ng-click="item.upload()"
+                                                        ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                    <span class="glyphicon glyphicon-upload"></span> 上传
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-xs"
+                                                        ng-click="item.remove(); vm.clearImg()">
+                                                    <span class="glyphicon glyphicon-trash"></span> 删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-md-2">产品简介</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control"
+                                      maxlength="1000" ng-model="vm.data.productList[0].summary"
+                                      rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--联系信息-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>招聘公司相关信息</strong>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4 word-spacing-25">手 机</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text"
+                                           maxlength="100"
+                                           ng-model="vm.data.company.phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4 word-spacing-25">邮 箱</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text"
+                                           maxlength="100"
+                                           ng-model="vm.data.company.mail">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-md-2">详细地址</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text"
+                                   maxlength="100"
+                                   ng-model="vm.data.company.address">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="col-md-2 control-label word-spacing-25">地 图</label>
+                        <div class="col-md-10 padding-0">
+                            <div class="col-md-12">
+                                <label class="btn btn-primary" for="file3">选择文件</label>
+                                <input id="file3" style="display: none" type="file"
+                                       nv-file-select
+                                       uploader="vm.uploader3"
+                                />
+                            </div>
+                            <div class="col-md-12">
+                                <img ng-src="{{vm.data.company.map}}" alt="配图预览" class="img-responsive">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <th>图片名</th>
+                                        <th>文件大小</th>
+                                        <th>进度</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="item in vm.uploader3.queue track by $index" class="ng-scope"
+                                            ng-if="$first">
+                                            <td><strong class="ng-binding">{{item.file.name}}</strong></td>
+                                            <td ng-show="vm.uploader3.isHTML5" nowrap="" class="ng-binding">{{
+                                                item.file.size/1024/1024 | number:2 }} MB
+                                            </td>
+                                            <td ng-show="vm.uploader3.isHTML5">
+                                                <div class="progress" style="margin-bottom: 0;">
+                                                    <div class="progress-bar" role="progressbar"
+                                                         ng-style="{ 'width': item.progress + '%' }"></div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-show="item.isSuccess"><i
+                                                        class="glyphicon glyphicon-ok"></i></span>
+                                                <span ng-show="item.isCancel"><i
+                                                        class="glyphicon glyphicon-ban-circle"></i></span>
+                                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                            </td>
+                                            <td nowrap="">
+                                                <button type="button" class="btn btn-success btn-xs"
+                                                        ng-click="item.upload()"
+                                                        ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                    <span class="glyphicon glyphicon-upload"></span> 上传
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-xs"
+                                                        ng-click="item.remove(); vm.clearImg()">
+                                                    <span class="glyphicon glyphicon-trash"></span> 删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-success"
+                        ng-disabled="theForm.$invalid||vm.selectedIndustryGroup.length===0||vm.data.company.logo===undefined||vm.data.company.approved===''"
+                        ng-click="vm.newCompany()">保存
+                </button>
+                <button class="btn btn-danger" ui-sref="field.companyList">取消</button>
+            </div>
+        </form>
+    </div>
+</div>

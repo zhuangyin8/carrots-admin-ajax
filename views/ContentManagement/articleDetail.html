@@ -1,0 +1,161 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <!--根据传过来的参数中是否有id,来判断是显示新增还是编辑-->
+        <strong ng-if="!vm.params.id">新增Article</strong>
+        <strong ng-if="vm.params.id">编辑Article</strong>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" name="myForm">
+            <div class="form-group">
+                <label class="col-md-2 control-label word-spacing-25"><span style="color: red">*</span>标 题</label>
+                <div class="col-md-8">
+                    <input class="form-control" name="title" ng-model="vm.params.title" required>
+                    <div class="checkbox" ng-show="myForm.title.$invalid && myForm.title.$dirty">
+                        * 标题不能为空
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label word-spacing-25"><span style="color: red">*</span>类 型</label>
+                <div class="col-md-2">
+                    <select class="form-control" name="type" ng-model="vm.params.type" required>
+                        <option value="">请选择</option>
+                        <option value="0">首页Banner</option>
+                        <option value="1">找职位Banner</option>
+                        <option value="2">找精英Banner</option>
+                        <option value="3">行业大图</option>
+                    </select>
+                    <div class="checkbox" ng-show="myForm.type.$invalid && myForm.type.$dirty">
+                        * 类型不能为空
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <!--当类型选择行业大图,即 vm.params.type==3,才显示行业的下拉选择框-->
+                    <select class="form-control" ng-if="vm.params.type==3" name="industry" ng-model="vm.params.industry"
+                            required>
+                        <option value="">请选择</option>
+                        <option value="0">移动互联网</option>
+                        <option value="1">电子商务</option>
+                        <option value="2">企业服务</option>
+                        <option value="3">O2O</option>
+                        <option value="4">教育</option>
+                        <option value="5">金融</option>
+                        <option value="6">游戏</option>
+                    </select>
+                    <div class="checkbox" ng-show="myForm.industry.$invalid && myForm.industry.$dirty">
+                        * 行业不能为空
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label word-spacing-25"><span style="color: red">*</span>说 明</label>
+                <div class="col-md-8">
+                    <!--<input class="form-control" type="text" ng-model="vm.params.content" name="content" required>-->
+                    <!--富文本编辑器-->
+                     <div type="text/html" style="margin:auto;height:200px;" ng-model="vm.params.content"
+                         name="content" meta-umeditor meta-umeditor-placeholder="说明不能为空" required="">
+                    </div>
+                     <div class="checkbox" ng-show="myForm.content.$invalid && myForm.content.$dirty">
+                        * 说明不能为空
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label"><span style="color: red">*</span>跳转链接</label>
+                <div class="col-md-8">
+                    <input class="form-control" ng-model="vm.params.url" name="url" required>
+                    <div class="checkbox" ng-show="myForm.url.$invalid && myForm.url.$dirty">
+                        * 跳转链接不能为空
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label class="col-md-2 control-label word-spacing-25"><span style="color: red">*</span>配 图</label>
+                <div class="col-md-10">
+                    <!-- div class="col-md-10 padding-10"-->
+                    <div class="col-md-12 ">
+                        <label class="btn btn-primary" for="file2">选择文件</label>
+                        <input id="file2" style="display: none" type="file" nv-file-select uploader="vm.uploader1">
+                    </div>
+                    <div class="col-md-12">
+                        <img ng-src="{{vm.params.img}}" alt="配图预览" ng-if="vm.params.img" class="img-responsive">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="table-responsive col-md-8 padding-0">
+                            <table class="table">
+                                <thead>
+                                <th>图片名</th>
+                                <th ng-show="vm.uploader1.isHTML5">文件大小</th>
+                                <th ng-show="vm.uploader1.isHTML5">进度</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in vm.uploader1.queue track by $index" class="ng-scope"
+                                    ng-if="$first">
+                                    <!--ng-if="$first"确保每一次上传一张图片-->
+                                    <td>
+                                        <strong class="ng-binding">{{item.file.name}}</strong>
+                                        <img ng-src="{{vm.params.img}}" alt="配图预览" ng-if="vm.params.img"
+                                             class="img-responsive">
+                                    </td>
+                                    <td ng-show="vm.uploader1.isHTML5" class="ng-binding">{{
+                                        item.file.size/1024/1024 | number:2 }} MB
+                                    </td>
+                                    <!--如果表达式的计算结果为true，则ng-show指令将显示指定的HTML元素，否则HTML元素将被隐藏。-->
+                                    <td ng-show="vm.uploader1.isHTML5">
+                                        <div class="progress" style="margin-bottom: 0;">
+                                            <div class="progress-bar" role="progressbar"
+                                                 ng-style="{ 'width': item.progress + '%' }"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                            <span ng-show="item.isSuccess">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                            </span>
+                                        <span ng-show="item.isCancel">
+                                                <i class="glyphicon glyphicon-ban-circle"></i>
+                                            </span>
+                                        <span ng-show="item.isError">
+                                                <i class="glyphicon glyphicon-remove"></i>
+                                            </span>
+                                    </td>
+                                    <td nowrap="">
+                                        <button type="button" class="btn btn-info btn-xs" ng-click="item.upload()"
+                                                ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                            <span class="glyphicon glyphicon-upload"></span> 上传
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-xs"
+                                                ng-click="item.remove(); vm.clearImg()">
+                                            <span class="glyphicon glyphicon-trash"></span> 删除
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                 <div class="col-md-8  col-md-offset-2">
+                    <!-- 每个input都不为空且验证通过时且图片上传，最下方的提交按钮才变为可使用状态-->
+                    <button type="button" class="btn btn-success" ng-click="vm.publishArticle() "
+                            ng-disabled="myForm.$invalid||vm.params.img===undefined">立即上线
+                    </button>
+                    <button type="button" class="btn btn-success" ng-click="vm.saveArticle()"
+                            ng-disabled="myForm.$invalid||vm.params.img===undefined">存为草稿
+                    </button>
+                    <button type="button" class="btn btn-danger pull-right" ng-click="vm.cancelArticle()"
+                            ui-sref="field.articleList">取消
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
