@@ -1,6 +1,7 @@
 # ng-admin
 
 AngularJS admin dashboard framework
+
 ## 如何运行此项目?
 
 ## 0. 先将项目clone 到你的电脑本地
@@ -123,3 +124,5 @@ location /
 - 开启nginx命令：start nginx
 - 重启命令：nginx -s reload
 - 关闭命令：nginx -s stop
+
+## 7.完整的nginx配置文件在项目中的nginx.conf 文件，可以直接替换你的nginx 配置文件
