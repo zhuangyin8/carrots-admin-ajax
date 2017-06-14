@@ -2,7 +2,7 @@
 
 AngularJS admin dashboard framework
 
-## 如何运行此项目?
+## 如何运行此项目?以下是项目运行的详细生说明，如果还有问题，请在 Issues  中提出，我会尽力解答。
 
 ## 0. 先将项目clone 到你的电脑本地
 
