@@ -1,7 +1,6 @@
 /**
- * Created by shuli on 2016-8-29.
+ *
  */
-'use strict';
 
 angular.module('admin')
     .controller('companyListDetailCtrl', function (commonUtil, companyIndustryGroup, $scope, uploadService, FileUploader, $state, $rootScope, infoManagementService) {

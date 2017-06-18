@@ -1,4 +1,6 @@
-// 'use strict';
+/**
+ *
+ */
 
 angular.module('admin')
     .directive('sidebar', function () {
@@ -25,8 +27,14 @@ angular.module('admin')
                     if (res.data.code == 0) {
                         var moduleIDs = Object.keys(res.data.data.role.permissionsSet);
                         // console.log("save permission set");
-                        localStorage["permissionsSet"] = JSON.stringify(res.data.data.role.permissionsSet);
-                        $rootScope.permissionsSet = JSON.parse(localStorage["permissionsSet"]);
+
+                        //将后台接口返回的数据转化为 JSON 字符串
+                        // localStorage["permissionsSet"] = JSON.stringify(res.data.data.role.permissionsSet);
+                        //将JSON 字符串转化为JSON
+                        // $rootScope.permissionsSet = JSON.parse(localStorage["permissionsSet"]);
+
+                        //深拷贝
+                        $rootScope.permissionsSet =JSON.parse(JSON.stringify(res.data.data.role.permissionsSet))
 
                         if (sessionStorage.mineSide == '' || sessionStorage.mineSide == undefined) {
                             moduleService.batchGetModule(moduleIDs).then(function (res) {

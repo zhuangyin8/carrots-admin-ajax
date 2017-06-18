@@ -1,6 +1,6 @@
-'use strict';
-// 将获取到的省市区ID过滤成文字
-
+/**
+ * 将获取到的省市区ID过滤成文字
+ */
 angular.module('admin')
     .filter('provinceFilter', function (PROVINCE) {
         return function (id) {

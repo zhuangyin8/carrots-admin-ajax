@@ -1,3 +1,6 @@
+/**
+ *
+ */
 angular.module("admin").controller('LoginController', ['$rootScope', '$state', '$cookies', '$timeout', 'loginService', 'managerService', 'recordCookies', LoginController]);
 
 function LoginController($rootScope, $state, $cookies, $timeout, loginService, managerService, recordCookies) {
@@ -24,3 +27,8 @@ function LoginController($rootScope, $state, $cookies, $timeout, loginService, m
         });
     };
 }
+
+/**
+ * The $timeout Service The $timeout service is AngularJS' version of the window.setTimeout function.
+ * $ timeout服务 $ timeout服务是AngularJS版本的window.setTimeout函数。
+ */

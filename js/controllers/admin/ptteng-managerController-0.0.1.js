@@ -1,5 +1,4 @@
-'use strict';
-angular.module('admin')
+ angular.module('admin')
     .controller('ManagerCtrl', function ($state, $scope, $rootScope,$cookies, commonUtil, managerService,roleService) {
         var vm = $scope.vm = {};
         $scope.rid_role={};

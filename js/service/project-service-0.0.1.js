@@ -1,6 +1,8 @@
-'use strict';
+
 angular.module('admin')
-//上传文件
+/**
+ * 上传文件
+ */
     .factory('uploadService', function (pathProject) {
         return {
             uploadFile: function (FileUploader, alias) {
@@ -12,7 +14,9 @@ angular.module('admin')
             }
         }
     })
-    // 信息管理
+    /**
+     * 信息管理
+     */
     .factory('infoManagementService', function ($http, pathProject) {
         return {
             // 获取公司列表
@@ -38,6 +42,7 @@ angular.module('admin')
                     url: pathProject.addCompany_url,
                     method: "POST",
                     headers: {'Content-Type': 'Application/json'},
+                    //将data 转换为JSON 字符串
                     data: JSON.stringify(data),
                     transformRequest: function (data, headersGetter) {
                         return data;
@@ -124,24 +129,31 @@ angular.module('admin')
             }
         }
     })
+    /**
+     * Article 管理
+     */
     .factory('ArticleManagementService', function ($http, pathProject) {
         return {
-            //获取
-            getArticleList: function (params) {
-                return $http.get(pathProject.getArticlelist_url, {params: params});
-            },
-            //新增
-            addArticle: function (params) {
-                return $http.post(pathProject.addArticle_url, params);
-            },
-            //删除
-            deleteArticle: function (id) {
-                return $http.delete(pathProject.deleteArticle_url(id));
-            },
             //获取单个
             getArticle: function (id) {
                 return $http.get(pathProject.getArticle_url(id));
             },
+            //获取多个
+            getArticleList: function (params) {
+                return $http.get(pathProject.getArticlelist_url, {params: params});
+            },
+
+            //新增
+            addArticle: function (params) {
+                return $http.post(pathProject.addArticle_url, params);
+            },
+
+            //删除
+            deleteArticle: function (id) {
+                return $http.delete(pathProject.deleteArticle_url(id));
+            },
+
+
             //编辑
             editArticle: function (id, params) {
                 return $http.put(pathProject.editArticle_url(id), params);

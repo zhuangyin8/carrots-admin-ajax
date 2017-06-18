@@ -1,0 +1,311 @@
+/*注释部分为特有样式*/
+/*换肤功能，需要多份样式，为了以后方便修改，特有样式提出去*/
+
+/*.wrapper {*/
+/*background: url("/images/SBAdmin/login-bg-orange2.jpg") no-repeat center;*/
+/*background-size: cover;*/
+/*position: relative;*/
+/*top: 0;*/
+/*right: 0;*/
+/*bottom: 0;*/
+/*left: 0;*/
+/*}*/
+
+.page-wrapper {
+    background-color: #f5f5f5;
+}
+
+@media (min-width: 768px) {
+    #page-wrapper {
+        float: left;
+
+        width: calc(100% - 250px);
+        margin-bottom: -3000px;
+        padding: 30px 30px 3000px 30px;
+    }
+}
+
+.navbar-top-links {
+    margin-right: 0;
+}
+
+.navbar-top-links li {
+    display: inline-block;
+}
+
+.navbar-top-links li:last-child {
+    margin-right: 15px;
+}
+
+.navbar-top-links li a {
+    min-height: 50px;
+
+    padding: 15px 5px;
+}
+
+/*角色名，用户名，退出按钮*/
+.navbar-top-links .dropdown .dropdown-character,
+.navbar-top-links .dropdown .dropdown-name,
+.navbar-top-links .dropdown .dropdown-close {
+    display: inline-block;
+
+    margin: 0 5px;
+
+    vertical-align: middle;
+}
+
+.navbar-top-links .dropdown .vertical {
+    color: #e8e8e8;
+}
+
+/*.navbar-top-links .dropdown .dropdown-close {*/
+/*color: #feb454;*/
+/*}*/
+
+.sidebar .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.sidebar .glyphicon {
+    padding: 0 10px;
+}
+
+.sidebar .glyphicon-triangle-left {
+    float: right;
+    padding-right: 30px;
+
+}
+
+.sidebar .glyphicon-triangle-left:before {
+    /*content: "\f0d9";*/
+    content: "\e251";
+}
+
+.sidebar .active > a > .glyphicon-triangle-left:before {
+    /*content: "\f0d7";*/
+    content: "\e252";
+}
+
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+    border-bottom: 0 !important;
+}
+
+.sidebar .nav-second-level li a {
+    padding-left: 67px;
+
+    font-size: 14px;
+
+}
+
+.sidebar .nav-third-level li a {
+    padding-left: 52px;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        float: left;
+
+        width: 250px;
+        margin-bottom: -3000px;
+        padding-top: 28px;
+        padding-bottom: 3000px;
+    }
+}
+
+/*sidebar选中后颜色*/
+/*.navActive {*/
+/*font-weight: bold;*/
+/*color: #41BB88 !important;*/
+/*background: #EEEEEE !important;*/
+/*}*/
+
+/*登陆页按钮样式*/
+/*.btn-submit {*/
+/*color: #fff;*/
+/*background-color: #fd9f2a;*/
+/*border-color: #fd9f2a;*/
+/*}*/
+
+/*.btn-submit:focus,*/
+/*.btn-submit.focus {*/
+/*color: #fff;*/
+/*background-color: #f89a2a;*/
+/*border-color: #f89a2a;*/
+/*}*/
+
+/*.btn-submit:hover {*/
+/*color: #fff;*/
+/*background-color: #e88e29;*/
+/*border-color: #e88e29;*/
+/*}*/
+
+/*input框 按钮*/
+/*.form-control:focus {*/
+/*border-color: #fd9f2a;*/
+/*outline: 0;*/
+/*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(253, 159, 42, 0.6);*/
+/*box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(253, 159, 42, 0.6);*/
+/*}*/
+
+/*登录页输入框输入的文字样式*/
+.login-user, .login-psd {
+    color: rgb(35, 42, 58);
+}
+
+.login-btn {
+    margin-top: 32px;
+}
+
+/*login页背景*/
+/*.bg-img {*/
+/*background: url("/images/SBAdmin/login-bg-orange2.jpg") no-repeat center;*/
+/*background-size: cover;*/
+/*position: absolute;*/
+/*top: 0;*/
+/*right: 0;*/
+/*bottom: 0;*/
+/*left: 0;*/
+/*}*/
+
+/*登录框面板水平垂直居中*/
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    padding: 46px 0;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.login-panel {
+    padding-top: 46px;
+    padding-bottom: 46px;
+}
+
+/*登录页公司logo*/
+.login-circle-img {
+    width: 76px;
+    height: 76px;
+    margin-top: -38px;
+
+    border-radius: 50%;
+    box-shadow: 0 -3px 7px rgba(160, 160, 160, 0.5);
+}
+
+/*login页输入框icon*/
+.login-user-icon {
+    position: absolute;
+    top: 96px;
+    left: 46px;
+
+    width: 22px;
+    height: 25px;
+
+    background: url("/images/SBAdmin/loginuser.png") 0 0;
+
+}
+
+.login-user:focus + .login-user-icon {
+    background: url("/images/SBAdmin/loginuser-active.png") 0 0;
+}
+
+.login-psd-icon {
+    position: absolute;
+    top: 156px;
+    left: 46px;
+
+    width: 23px;
+    height: 26px;
+
+    background: url("/images/SBAdmin/loginpsd.png") 0 0;
+
+}
+
+.login-psd:focus + .login-psd-icon {
+    background: url("/images/SBAdmin/loginpsd-active.png") 0 0;
+}
+
+.topbar-content {
+    overflow: hidden;
+
+    border-color: #e3e2e2;
+    background-color: #ffffff;
+    box-shadow: 0 0 6px #e3e2e2;
+}
+
+/*topbar顶栏导航*/
+.topbar {
+    border: none;
+}
+
+/*顶栏项目名称*/
+/*.topbar-brand {*/
+/*float: left;*/
+/*height: 50px;*/
+/*padding: 15px 42px 15px 43px;*/
+/*font-size: 18px;*/
+/*line-height: 20px;*/
+/*color: white;*/
+/*border-bottom: solid #fdbb6b 1px;*/
+/*}*/
+
+/*自适应时菜单按钮*/
+.navbar-toggle-button {
+    border: 1px solid white;
+}
+
+.navbar-toggle-button span {
+    background-color: white;
+}
+
+/*sidebar导航字体颜色、样式*/
+.sidebar ul li a {
+    padding-left: 10px;
+
+    color: white;
+    border-left: solid transparent;
+
+    font-size: 16px;
+}
+
+/*sidebar hover、active样式*/
+/*.side > li > a:focus, .side > li > a:hover {*/
+/*text-decoration: none;*/
+/*background-color: #feae45;*/
+/*}*/
+
+/*.side > .nav-first-level.active > a {*/
+/*text-decoration: none;*/
+/*border-left: solid white;*/
+/*}*/
+
+/*换肤按钮*/
+.skinChangeBtn {
+    position: fixed;
+    z-index: 999;
+    top: 150px;
+    right: 0;
+
+    padding: 0 11px;
+
+    color: white;
+    border: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: rgba(185, 185, 185, 0.5);
+
+    font-size: 25px;
+}
+
+/*换肤模态框*/
+.modal-title {
+    color: #47c6e8;
+
+    border-bottom: none;
+
+    font-size: 16px;
+}

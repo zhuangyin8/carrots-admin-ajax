@@ -2,7 +2,6 @@
  * 作为angular的全局配置和初始化文件，并引入该文件
  */
 
-'use strict';
 
 angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStrap', 'angularFileUpload', 'angular-loading-bar', 'ngMessages'])
     .factory('recordCookies', recordCookies)

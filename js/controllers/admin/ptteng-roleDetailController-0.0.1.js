@@ -1,4 +1,6 @@
-'use strict';
+/**
+ *
+ */
 angular.module('admin')
     .controller('RoleDetailCtrl', function ($state, $scope, $rootScope, commonUtil, roleService, managerService, moduleService) {
         var vm = $scope.vm = {};

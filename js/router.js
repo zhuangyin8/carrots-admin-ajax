@@ -1,6 +1,6 @@
 /**
  *
- * 配置项目的路由，使之可以在几个页面中做单页面跳转(配置路由)
+ * 配置项目的路由，使之可以在多个页面中做单页面跳转(配置路由)
  *
  * @param $stateProvider
  * @param $urlRouterProvider
@@ -8,7 +8,6 @@
  * @param $locationProvider
  */
 
-'use strict';
 
 function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $locationProvider) {
     var _lazyLoad = function (loaded) {
@@ -65,13 +64,17 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 ])
             }
         })
-
+        /**
+         * 后台
+         */
         .state('field.dashboard', {
             url: '/dashboard',
             templateUrl: 'views/dashboard.html'
         })
 
-        // 登录
+        /**
+         * 登录
+         */
         .state('login', {
             url: '/login',
             templateUrl: 'views/admin/login.html',
@@ -81,10 +84,10 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/loginController.js')
             }
         })
+
         /**
-         * 后台管理
+         * 用户管理
          */
-        //用户管理
         .state('field.manager', {
             url: '/manager?page',
             templateUrl: 'views/admin/manager.html',
@@ -93,7 +96,9 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/ptteng-managerController-0.0.1.js')
             }
         })
-        //用户新增
+        /**
+         * 用户新增
+         */
         .state('field.managerDetail', {
             url: '/managerDetail/:id',
             templateUrl: 'views/admin/managerDetail.html',
@@ -102,7 +107,9 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/ptteng-managerDetailController-0.0.1.js')
             }
         })
-        //角色管理
+        /**
+         *
+         */
         .state('field.role', {
             url: '/role/:page',
             templateUrl: 'views/admin/role.html',
@@ -111,7 +118,9 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/ptteng-roleController-0.0.1.js')
             }
         })
-        //角色新增
+        /**
+         * 角色新增
+         */
         .state('field.roleDetail', {
             url: '/roleDetail/:id',
             templateUrl: 'views/admin/roleDetail.html',
@@ -119,8 +128,9 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
             resolve: {
                 loadMyFile: _lazyLoad('js/controllers/admin/ptteng-roleDetailController-0.0.1.js')
             }
-        }) //模块管理
-        .state('field.module', {
+        })
+
+        .state('field.module', {//模块管理
             url: '/module?page&size',
             templateUrl: 'views/admin/module.html',
             controller: 'ModuleCtrl',
@@ -128,8 +138,8 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/ptteng-moduleController-0.0.1.js')
             }
         })
-        //模块新增
-        .state('field.moduleDetail', {
+
+        .state('field.moduleDetail', { //模块新增
             url: '/moduleDetail/:id',
             templateUrl: 'views/admin/moduleDetail.html',
             controller: 'ModuleDetailCtrl',
@@ -137,8 +147,8 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/ptteng-moduleDetailController-0.0.1.js')
             }
         })
-        //密码修改
-        .state('field.pwd', {
+
+        .state('field.pwd', {//密码修改
             url: '/pwd',
             templateUrl: 'views/admin/pwdSetting.html',
             controller: 'PwdCtrl',
@@ -146,8 +156,8 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/ptteng-pwdController-0.0.1.js')
             }
         })
-        //新添操作记录
-        .state('field.operatingRecord', {
+
+        .state('field.operatingRecord', {//新添操作记录
             url: '/operatingRecord/:operateStart/:operateEnd/:managerName/:operate/:roleID',
             templateUrl: 'views/admin/operatingRecord.html',
             controller: 'operatingRecordCtrl',
@@ -156,8 +166,8 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/operatingRecordCtrl.js')
             }
         })
-        //操作记录详情
-        .state('field.recordDetail', {
+
+        .state('field.recordDetail', {//操作记录详情
             url: '/recordDetail/:id',
             templateUrl: 'views/admin/recordDetail.html',
             controller: 'recordDetailCtrl',
@@ -166,11 +176,12 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                 loadMyFile: _lazyLoad('js/controllers/admin/recordDetailCtrl.js')
             }
         })
+
+
         /**
          * 信息管理
          */
-        // 公司列表
-        .state('field.companyList', {
+        .state('field.companyList', {        // 公司列表
             url: '/companyList/:page/:size?name&product&province&city&county&financing&freezed&approved&industry',
             templateUrl: 'views/InformationManagement/companyList.html',
             controller: 'companyListCtrl',
@@ -182,8 +193,8 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
                     'js/controllers/InformationManagement/companyList.js'])
             }
         })
-        // 公司详情
-        .state('field.companyDetail', {
+
+        .state('field.companyDetail', {      // 公司详情
             url: '/companyDetail?companyId&province&county&city',
             templateUrl: 'views/InformationManagement/companyDetail.html',
             controller: 'companyListDetailCtrl',
@@ -225,7 +236,6 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
             url: '/articleList/:page/:size?category&name&createBy&startAt&endAt&type&status',
             templateUrl: 'views/ContentManagement/articleList.html',
             controller: 'articleListCtrl',
-
             controllerAs: 'vm',
             resolve: {
                 loadMyFile: _lazyLoad([

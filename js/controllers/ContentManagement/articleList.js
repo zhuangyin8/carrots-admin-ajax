@@ -8,10 +8,11 @@ angular.module('sortableApp', ['ui.sortable'])
         var tmpList = [];
         vm.articleList = tmpList;
     });
+
 /**
- * Created by q on 2016/9/6.
+ *
  */
-'use strict';
+
 angular.module('admin')
 //选择类别
     .controller('articleListCtrl', function ($scope, FileUploader, $state, ArticleManagementService, $rootScope) {
@@ -35,7 +36,7 @@ angular.module('admin')
              * 当根据搜索条件没有符合的数据,显示提示或弹出警告框
              */
             if (vm.total === 0) {
-                // $rootScope.alert("没有符合此条件的数据");
+                // $rootScope.alert("没有符合此条件的数据");//弹出警告框
                 vm.warning = "没有符合此条件的数据";
             }
         });

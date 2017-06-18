@@ -25,3 +25,15 @@ function MainController($rootScope) {
         $("#skin").attr("href", name);
     };
 }
+
+/**
+ * The $interval Service The $interval service is AngularJS' version of the window.setInterval function.
+ * $ interval服务 $ interval服务是AngularJS的window.setInterval函数的版本。
+ */
+// angular.module('admin')
+//     .controller('timeCtrl', function ($scope, $interval) {
+//         $scope.theTime = new Date().toLocaleTimeString();
+//         $interval(function () {
+//             $scope.theTime = new Date().toLocaleTimeString();
+//         }, 1000);
+//     });

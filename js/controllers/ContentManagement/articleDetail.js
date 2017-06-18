@@ -1,8 +1,8 @@
 /**
- * Created by q on 2016/9/6.
+ *
  */
-'use strict';
-angular.module('admin').controller('articleDetailCtrl',function ($scope, FileUploader, $state, uploadService, ArticleManagementService, $rootScope) {
+angular.module('admin')
+    .controller('articleDetailCtrl', function ($scope, FileUploader, $state, uploadService, ArticleManagementService, $rootScope) {
         var vm = this;
         vm.params = $state.params;
         console.log(vm.params);

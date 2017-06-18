@@ -1,7 +1,6 @@
 /**
- * Created by q on 2016/8/30.
+ *
  */
-'use strict';
 angular.module('admin')
     .controller('positionListCtrl', function ($scope, $state, $rootScope, infoManagementService, commonUtil) {
         var vm = this;

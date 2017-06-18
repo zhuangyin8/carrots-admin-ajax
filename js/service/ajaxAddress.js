@@ -1,8 +1,8 @@
 /**
  * CRUD
- * 后台的最终目的就是针对数据库的操作，而操作归纳下来无非就是 Create(新增),Read(读取),Update(更新),Delete(删除),这就是CRUD的意思,参见维基的解释
+ * 后台的最终目的就是针对数据库的操作，而操作归纳下来无非就是 Create(新增),Read(读取),Update(更新),Delete(删除),这就是CRUD的意思
  * Restful
- * 前后端分离，我们需要将CRUD的接口通过标准协议(WebAPI)来实现，Restful就是为这个协议而生的，参见老外的解释
+ * 前后端分离，我们需要将CRUD的接口通过标准协议(WebAPI)来实现，Restful就是为这个协议而生的
  * HTTP请求      CRUD            返回状态位
  * POST         Create          201
  * GET          Read            200

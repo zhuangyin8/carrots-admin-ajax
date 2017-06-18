@@ -1,9 +1,9 @@
 /**
- * Created by shuli on 2016-8-31.
+ *
  */
 angular.module("admin")
 
-// 公司行业
+    // 公司行业
     .constant('industry', [
         {id: 0, name: '移动互联网'},
         {id: 1, name: '电子商务'},
@@ -25,36 +25,13 @@ angular.module("admin")
     ])
     // 公司行业多选数据
     .constant('companyIndustryGroup', [
-        {
-            industry: 0,
-            name: '移动互联网'
-            // ticked: true
-        },
-        {
-            name: '电子商务',
-            industry: 1
-        },
-        {
-            name: '企业服务 ',
-            industry: '2'
-        },
-        {
-            name: 'O2O',
-            industry: '3'
-        },
-        {
-            name: '教育',
-            industry: '4'
-        },
-        {
-            name: '金融',
-            industry: '5'
-
-        },
-        {
-            name: '游戏',
-            industry: '6'
-        }
+        {industry: 0, name: '移动互联网'},
+        {industry: 1, name: '电子商务'},
+        {industry: 2, name: '企业服务 '},
+        {industry: 3, name: 'O2O'},
+        {industry: 4, name: '教育'},
+        {industry: 5, name: '金融'},
+        {industry: 6, name: '游戏'}
     ])
     // 二级三级类目数据
     .constant('categoryData', [
@@ -272,5 +249,4 @@ angular.module("admin")
                 }
             ]
         }
-
     ]);

@@ -1,7 +1,8 @@
-'use strict';
+/**
+ *
+ */
 
 angular.module('admin')
-
     .factory('commonUtil', function ($rootScope, $state, categoryData) {
         return {
             /**

@@ -1,5 +1,5 @@
-<div class="form-horizontal">
-    <div class="panel panel-default">
+<div class="panel panel-default">
+    <div class="form-horizontal">
         <!--搜索框-->
         <div class="panel-body">
             <div class="row">
@@ -7,9 +7,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">公司名称</label>
                         <div class="col-md-8">
-                            <input class="form-control"
-                                   type="text"
-                                   ng-model="vm.searchParams.name">
+                            <input class="form-control" type="text" ng-model="vm.searchParams.name">
                         </div>
                     </div>
                 </div>
@@ -103,6 +101,7 @@
         </div>
     </div>
 </div>
+
 <div class="panel panel-default">
     <!--公司列表-->
     <div class="panel-heading">
@@ -154,3 +153,19 @@
 </div>
 
 
+<!--
+A horizontal form means that the labels are aligned next to the input field (horizontal) on large and medium screens.
+On small screens (767px and below), it will transform to a vertical form (labels are placed on top of each input).
+
+水平表单意味着标签在大屏幕和中间屏幕上的输入字段（水平）旁边对齐。在小屏幕（767像素和以下）上，它将转换为垂直形式（标签放置在每个输入的顶部）。
+
+Additional rules for a horizontal form: Add class .form-horizontal to the <form> element Add class .control-label to all <label> elements
+
+水平表单的附加规则： 将.form-horizo​​ntal类添加到<form>元素 将class .control-label添加到所有<label>元素
+
+Tip: Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout.
+ The following example creates a horizontal form with two input fields, one checkbox, and one submit button.
+
+提示：使用Bootstrap的预定义网格类可以在水平布局中对齐标签和表单控件组。
+以下示例创建一个具有两个输入字段，一个复选框和一个提交按钮的水平表单。
+-->

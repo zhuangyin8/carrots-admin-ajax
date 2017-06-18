@@ -1,3 +1,4 @@
+<!--账户管理-->
 <div class="panel panel-default">
     <div class="panel-body">
         <form class="form-horizontal">
@@ -66,6 +67,6 @@
                 </tbody>
             </table>
         </div>
-        <pagination total="{{vm.total}}"></pagination>
+        <pagination  ng-if="vm.total" total="{{vm.total}}"></pagination>
     </div>
 </div>

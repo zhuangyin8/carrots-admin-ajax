@@ -79,11 +79,12 @@
         </div>
     </form>
 </div>
+
 <div class="panel panel-info">
     <div class="panel-heading">
         <strong>Article列表</strong>
-        <button type="button" class="btn btn-xs btn-info pull-right margin-left-10" ui-sref="field.articleDetail">
-            +新增
+        <button type="button" class="btn btn-sm btn-info pull-right margin-left-10" ui-sref="field.articleDetail">
+            <span class="glyphicon glyphicon-plus"></span> 新增
         </button>
         <!--<button type="button" class="btn btn-xs btn-danger pull-right" ng-click="vm.saveSort()" ng-show="vm.searchParams.type=='0'||vm.searchParams.type=='1'||vm.searchParams.type=='2'">保存排序</button>-->
     </div>
@@ -119,15 +120,15 @@
                 <td>
                     <a type="button" class="btn btn-sm btn-warning"
                        ng-click="vm.changeArticleStatus(item.id,item.status)">{{item.status|articleStatusChangeFilter}}</a>
-                    <a type="button" class="btn btn-sm btn-info" ui-sref="field.articleDetail({id:item.id})">编辑</a>
-                    <a type="button" class="btn btn-sm btn-danger" ng-click="vm.deleteArticle(item.id,$index)">删除</a>
+                    <a type="button" class="btn btn-sm btn-info" ui-sref="field.articleDetail({id:item.id})"><span class="glyphicon glyphicon-edit"></span> 编辑</a>
+                    <a type="button" class="btn btn-sm btn-danger" ng-click="vm.deleteArticle(item.id,$index)"><span class="glyphicon glyphicon-remove"></span> 删除</a>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
-    <!--<div class="checkbox">-->
-    <p class="text-center text-danger">{{vm.warning}}</p>
-    <!--</div>-->
+
+    <p class="text-center text-warning">{{vm.warning}}</p>
+
     <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
 </div>

@@ -1,4 +1,6 @@
-'use strict';
+/**
+ *
+ */
 angular.module('admin')
     .controller('RoleCtrl', function ($state, $scope, $rootScope, $cookies, commonUtil, roleService) {
         var vm = $scope.vm = {};

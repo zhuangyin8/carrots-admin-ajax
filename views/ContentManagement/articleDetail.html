@@ -1,8 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <!--根据传过来的参数中是否有id,来判断是显示新增还是编辑-->
-        <strong ng-if="!vm.params.id">新增Article</strong>
-        <strong ng-if="vm.params.id">编辑Article</strong>
+        <strong>{{(!!vm.params.id)?"编辑Article":"新增Article"}}</strong>
     </div>
     <div class="panel-body">
         <form class="form-horizontal" name="myForm">

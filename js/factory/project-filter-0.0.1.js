@@ -1,4 +1,6 @@
-// 'use strict';
+/**
+ *
+ */
 angular.module('admin')
     /**
      * 公司列表

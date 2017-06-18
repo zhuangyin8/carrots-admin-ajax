@@ -1,3 +1,6 @@
+/**
+ *
+ */
 angular.module("admin")
     .constant('areaData', {
         "provinces": [

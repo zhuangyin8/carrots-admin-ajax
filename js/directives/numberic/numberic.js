@@ -1,3 +1,6 @@
+/**
+ *
+ */
 //只输入数字
 angular.module("admin")
     .directive('numberic', function () {

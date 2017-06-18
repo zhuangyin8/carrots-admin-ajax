@@ -1,4 +1,6 @@
-'use strict';
+/**
+ *
+ */
 angular.module('admin')
     .controller('PwdCtrl', function ($state, $scope, $rootScope, commonUtil, pwdService, recordCookies) {
         var vm = $scope.vm = {};

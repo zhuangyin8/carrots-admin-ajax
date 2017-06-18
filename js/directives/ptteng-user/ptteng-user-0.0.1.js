@@ -1,5 +1,6 @@
-'use strict';
-
+/**
+ *
+ */
 angular.module('admin')
     .directive('user', function () {
         return {

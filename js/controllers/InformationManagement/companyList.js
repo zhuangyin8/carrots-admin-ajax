@@ -1,7 +1,7 @@
 /**
  * 公司列表
  */
-'use strict';
+// 'use strict';
 //严格模式
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode
 angular.module('admin')
