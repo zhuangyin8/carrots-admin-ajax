@@ -1,11 +1,12 @@
-# ng-admin
-
-AngularJS admin dashboard framework
-
-## 如何运行此项目?
+## 项目说明
 此项目是萝卜多后台管理系统。
 “萝卜多”人才推荐——葡萄藤旗下的主要业务之一，为人才推荐公司，同时也能对人才进行分类以方便浏览。此项目也提供给学员复盘练习使用，学习搭建整套网站的技术和流程。
 以下是项目运行的详细 说明，如果还有问题，请在 Issues  中提出，我会尽力解答。
+
+## 在线运行此项目?
+[在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
+账号:admin
+密码:123456
 
 ## 0. 先将项目clone 到你的电脑本地
 
