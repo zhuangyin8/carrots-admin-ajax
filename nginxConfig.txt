@@ -1,0 +1,31 @@
+跨域：
+location拦截名为
+
+后台——/carrots-admin-ajax/
+服务器nginx设置为：
+
+①统一版
+#IT修真院-web task
+   location /carrots-admin-ajax/{
+           proxy_pass   http://120.132.77.162:10498/; (web任务环境独立后，这个改成新的域名或者ip，官网任务资料也需要相应修改)
+       }
+
+#萝卜多前台
+         location /carrots-ajax/{
+                         proxy_pass http://120.132.77.162:10508/;
+           }
+#萝卜多后台
+   location   /carrots-admin-ajax/{
+      proxy_pass  http://120.132.77.162:10498/;
+  }
+
+
+②个性版在拦截名加上小组代号:
+#SixGod组-后台
+location /carrots-admin-ajax-SixGod/ {
+proxy_pass http://120.132.77.162:10785/;
+}
+#西门庆组-后台
+location /carrots-admin-ajax-ximenqing/ {
+proxy_pass http://120.132.77.162:10808/;
+}

@@ -39,7 +39,8 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
     //更改url格式配置为html5，去掉#号
     // $locationProvider.html5Mode(true);
 
-    $urlRouterProvider.otherwise('/dashboard');
+    // $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/login');
     //在路径没有匹配的路由的时候，跳转(重定向)到一个默认的路径
     //用来配置非 $state 的额外的路由
 
@@ -90,10 +91,10 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
          */
         .state('field.manager', {
             url: '/manager?page',
-            templateUrl: 'views/admin/manager.html',
+            templateUrl: 'views/BackstageManagement/manager.html',
             controller: 'ManagerCtrl',
             resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/ptteng-managerController-0.0.1.js')
+                loadMyFile: _lazyLoad('js/controllers/BackstageManagement/managerController.js')
             }
         })
         /**
@@ -101,21 +102,21 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
          */
         .state('field.managerDetail', {
             url: '/managerDetail/:id',
-            templateUrl: 'views/admin/managerDetail.html',
+            templateUrl: 'views/BackstageManagement/managerDetail.html',
             controller: 'ManagerDetailCtrl',
             resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/ptteng-managerDetailController-0.0.1.js')
+                loadMyFile: _lazyLoad('js/controllers/BackstageManagement/managerDetailController.js')
             }
         })
         /**
-         *
+         * 角色列表
          */
         .state('field.role', {
             url: '/role/:page',
-            templateUrl: 'views/admin/role.html',
+            templateUrl: 'views/BackstageManagement/role.html',
             controller: 'RoleCtrl',
             resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/ptteng-roleController-0.0.1.js')
+                loadMyFile: _lazyLoad('js/controllers/BackstageManagement/roleController.js')
             }
         })
         /**
@@ -123,59 +124,69 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
          */
         .state('field.roleDetail', {
             url: '/roleDetail/:id',
-            templateUrl: 'views/admin/roleDetail.html',
+            templateUrl: 'views/BackstageManagement/roleDetail.html',
             controller: 'RoleDetailCtrl',
             resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/ptteng-roleDetailController-0.0.1.js')
+                loadMyFile: _lazyLoad('js/controllers/BackstageManagement/roleDetailController.js')
             }
         })
-
-        .state('field.module', {//模块管理
+        /**
+         * 模块管理
+         */
+        .state('field.module', {
             url: '/module?page&size',
-            templateUrl: 'views/admin/module.html',
+            templateUrl: 'views/BackstageManagement/module.html',
             controller: 'ModuleCtrl',
             resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/ptteng-moduleController-0.0.1.js')
+                loadMyFile: _lazyLoad('js/controllers/BackstageManagement/moduleController.js')
             }
         })
-
-        .state('field.moduleDetail', { //模块新增
+        /**
+         * 模块新增/编辑
+         */
+        .state('field.moduleDetail', {
             url: '/moduleDetail/:id',
-            templateUrl: 'views/admin/moduleDetail.html',
+            templateUrl: 'views/BackstageManagement/moduleDetail.html',
             controller: 'ModuleDetailCtrl',
             resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/ptteng-moduleDetailController-0.0.1.js')
+                loadMyFile: _lazyLoad('js/controllers/BackstageManagement/moduleDetailController.js')
             }
         })
-
-        .state('field.pwd', {//密码修改
+        /**
+         * 密码修改
+         */
+        .state('field.pwd', {
             url: '/pwd',
-            templateUrl: 'views/admin/pwdSetting.html',
+            templateUrl: 'views/BackstageManagement/pwdSetting.html',
             controller: 'PwdCtrl',
             resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/ptteng-pwdController-0.0.1.js')
+                loadMyFile: _lazyLoad('js/controllers/BackstageManagement/pwdController.js')
             }
         })
-
-        .state('field.operatingRecord', {//新添操作记录
-            url: '/operatingRecord/:operateStart/:operateEnd/:managerName/:operate/:roleID',
-            templateUrl: 'views/admin/operatingRecord.html',
-            controller: 'operatingRecordCtrl',
-            controllerAs: 'vm',
-            resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/operatingRecordCtrl.js')
-            }
-        })
-
-        .state('field.recordDetail', {//操作记录详情
-            url: '/recordDetail/:id',
-            templateUrl: 'views/admin/recordDetail.html',
-            controller: 'recordDetailCtrl',
-            controllerAs: 'vm',
-            resolve: {
-                loadMyFile: _lazyLoad('js/controllers/admin/recordDetailCtrl.js')
-            }
-        })
+        // /**
+        //  * 新添操作记录
+        //  */
+        // .state('field.operatingRecord', {
+        //     url: '/operatingRecord/:operateStart/:operateEnd/:managerName/:operate/:roleID',
+        //     templateUrl: 'views/admin/operatingRecord.html',
+        //     controller: 'operatingRecordCtrl',
+        //     controllerAs: 'vm',
+        //     resolve: {
+        //         loadMyFile: _lazyLoad('js/controllers/admin/operatingRecordCtrl.js')
+        //     }
+        // })
+        // /**
+        //  * 操作记录详情
+        //  */
+        // .state('field.recordDetail', {
+        //     url: '/recordDetail/:id',
+        //     templateUrl: 'views/admin/recordDetail.html',
+        //     controller: 'recordDetailCtrl',
+        //     controllerAs: 'vm',
+        //     resolve: {
+        //         loadMyFile: _lazyLoad('js/controllers/admin/recordDetailCtrl.js')
+        //     }
+        // })
 
 
         /**

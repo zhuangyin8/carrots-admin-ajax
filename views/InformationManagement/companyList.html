@@ -105,10 +105,9 @@
 <div class="panel panel-default">
     <!--公司列表-->
     <div class="panel-heading">
-        <strong>公司列表</strong>
-        <button
-                class="btn btn-primary btn-xs pull-right"
-                ui-sref="field.companyDetail">新增
+        公司列表
+        <button type="button" class="btn btn-sm btn-info pull-right margin-left-10" ui-sref="field.companyDetail">
+            <span class="glyphicon glyphicon-plus"></span> 新增
         </button>
     </div>
     <div class="panel-body">
@@ -136,13 +135,24 @@
                     <td>{{company.approved|approvedStatusFilter}}</td>
                     <td>{{company.freezed|freezedStatusFilter}}</td>
                     <td>
-                        <a class="btn btn-sm"
-                           ui-sref="field.positionList({companyId:company.id,companyName:company.name})">职位</a>
-                        <a class="btn btn-sm" href="" ng-click="vm.approveCompany(company.id,1,company.approved)">{{company.approved|changeApprovedStatusFilter}}</a>
-                        <a class="btn btn-sm" ui-sref="field.companyDetail({companyId:company.id})">编辑</a>
-                        <a class="text-danger btn btn-sm" href=""
-                           ng-click="vm.freezeCompany(company.id,0,company.freezed)">{{company.freezed|changeFreezedStatusFilter}}</a>
-                        <a class="text-danger btn-sm btn" href="" ng-click="vm.delCompany(company.id,$index)">删除</a>
+                        <button class="btn btn-sm btn-primary"
+                                ui-sref="field.positionList({companyId:company.id,companyName:company.name})">职位
+                        </button>
+                        <buttona class="btn btn-sm btn-default" ng-click="vm.approveCompany(company.id,1,company.approved)">
+                            {{company.approved|changeApprovedStatusFilter}}
+                        </buttona>
+                        <button class="btn btn-sm btn-info" ui-sref="field.companyDetail({companyId:company.id})">
+                            <span class="glyphicon glyphicon-edit"></span> 编辑
+                        </button>
+
+                        <button class="text-danger btn btn-sm btn-warning"
+                                ng-click="vm.freezeCompany(company.id,0,company.freezed)">
+                            {{company.freezed|changeFreezedStatusFilter}}
+                        </button>
+                        <button class="text-danger btn-sm btn btn-danger" href=""
+                                ng-click="vm.delCompany(company.id,$index)">
+                            <span class="glyphicon glyphicon-remove"></span> 删除
+                        </button>
                     </td>
                 </tr>
                 </tbody>

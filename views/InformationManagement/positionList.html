@@ -147,9 +147,10 @@
     <div class="panel-heading">
         <strong ng-if="!vm.searchParams.companyId">职位列表</strong>
         <strong ng-if="vm.searchParams.companyId">{{vm.searchParams.companyName}}的在招职位</strong>
-        <button type="button" class="btn btn-xs btn-danger pull-right"
+        <button class="btn btn-xs btn-danger pull-right"
                 ui-sref="field.positionDetails({companyId:vm.searchParams.companyId,companyName:vm.searchParams.companyName})"
-                ng-show="vm.searchParams.companyId">+新增
+                ng-show="vm.searchParams.companyId">
+            <span class="glyphicon glyphicon-plus"></span>新增
         </button>
     </div>
     <div class="panel-body table-responsive">
@@ -180,13 +181,16 @@
                 <td>{{data.updateAt| date:'yyyy-MM-dd'}}</td>
                 <td>{{data.status|positionStatusFilter}}</td>
                 <td>
-                    <a type="button" class="btn btn-sm" ng-click="vm.changeStatus(data.status,data.id)">
+                    <button class="btn btn-sm btn-warning" ng-click="vm.changeStatus(data.status,data.id)">
                         {{data.status|positionStatusChangeFilter|positionStatusFilter}}
-                    </a>
-                    <a type="button" class="btn btn-sm"
-                       ui-sref="field.positionDetails({id:data.id,companyId:data.companyId,companyName:data.companyName})">编辑
-                    </a>
-                    <a type="button" class="btn btn-sm" ng-click="vm.deletePosition(data.id,$index)">删除</a>
+                    </button>
+                    <button class="btn btn-sm btn-info"
+                            ui-sref="field.positionDetails({id:data.id,companyId:data.companyId,companyName:data.companyName})">
+                        <span class="glyphicon glyphicon-edit"></span> 编辑
+                    </button>
+                    <button class="btn btn-sm btn-danger" ng-click="vm.deletePosition(data.id,$index)">
+                        <span class="glyphicon glyphicon-remove"></span>删除
+                    </button>
                 </td>
             </tr>
             </tbody>

@@ -1,7 +1,9 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <b>模块管理</b>
-        <button class="btn btn-xs btn-default pull-right" ui-sref="field.moduleDetail">+新增</button>
+        模块管理
+        <button type="button" class="btn btn-sm btn-info pull-right margin-left-10" ui-sref="field.moduleDetail">
+            <span class="glyphicon glyphicon-plus"></span> 新增
+        </button>
     </div>
     <div class="panel-body">
         <div class="table-responsive border">
@@ -32,8 +34,14 @@
                     <td>{{item.createAt|date:'yyyy-MM-dd'}}<br>{{item.createAt|date:'HH:mm:ss'}}</td>
                     <td>{{item.createByName}}</td>
                     <td>
-                        <button class="btn btn-xs btn-success"  ui-sref="field.moduleDetail({id: item.id})">编辑</button>
-                        <button class="btn btn-xs btn-danger"  ng-click="vm.delete(item.id)">删除</button>
+                         <button class="btn btn-sm btn-info" ui-sref="field.moduleDetail({id: item.id})">
+                            <span class="glyphicon glyphicon-edit"></span> 编辑
+                        </button>
+                        <!--<button class="btn btn-xs btn-danger"  ng-click="vm.delete(item.id)">删除</button>-->
+                        <button class="btn btn-sm btn-danger" ng-click="vm.delete(item.id)">
+                            <span class="glyphicon glyphicon-remove"></span> 删除
+                        </button>
+
                     </td>
                 </tr>
                 </tbody>

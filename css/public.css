@@ -631,13 +631,10 @@ th {
     font-weight: bold;
 }
 
-.checkbox {
-    color: #a94442;
-}
 
-/*.text-danger {*/
-    /*color: red;*/
-/*}*/
+.text-danger {
+    color: red;
+}
 
 /*隐藏checkbox*/
 .hidden {

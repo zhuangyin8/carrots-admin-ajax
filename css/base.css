@@ -2,7 +2,7 @@
 /*换肤功能，需要多份样式，为了以后方便修改，特有样式提出去*/
 
 /*.wrapper {*/
-/*background: url("/images/SBAdmin/login-bg-orange2.jpg") no-repeat center;*/
+/*background: url("/images/skin/login-bg-orange2.jpg") no-repeat center;*/
 /*background-size: cover;*/
 /*position: relative;*/
 /*top: 0;*/
@@ -160,7 +160,7 @@
 
 /*login页背景*/
 /*.bg-img {*/
-/*background: url("/images/SBAdmin/login-bg-orange2.jpg") no-repeat center;*/
+/*background: url("/images/skin/login-bg-orange2.jpg") no-repeat center;*/
 /*background-size: cover;*/
 /*position: absolute;*/
 /*top: 0;*/
@@ -205,28 +205,41 @@
     width: 22px;
     height: 25px;
 
-    background: url("/images/SBAdmin/loginuser.png") 0 0;
+    background: url("../images/loginuser.png") 0 0;
 
 }
 
 .login-user:focus + .login-user-icon {
-    background: url("/images/SBAdmin/loginuser-active.png") 0 0;
+    background: url("../images/loginuser-active.png") 0 0;
 }
 
+/*
+:focus 伪类
+ e:focus
+在这个以及后续的例子中，e 表示任何元素，如 p、h1、section，等等。
+表单中的文本字段在用户单击它时会获得焦点，然后用户才能在其中输入字符。下面的规则
+input:focus {border:1px solid blue;}
+会在光标位于 input 字段中时，为该字段添加一个蓝色边框。这样可以让用户明确
+地知道输入的字符会出现在哪里。
+*/
+/*
+标签 1 + 标签 2
+标签 2 必须紧跟在其同胞标签 1 的后面。
+*/
 .login-psd-icon {
     position: absolute;
     top: 156px;
     left: 46px;
 
-    width: 23px;
-    height: 26px;
+    width: 22px;
+    height: 25px;
 
-    background: url("/images/SBAdmin/loginpsd.png") 0 0;
+    background: url("../images/loginpsd.png") 0 0;
 
 }
 
 .login-psd:focus + .login-psd-icon {
-    background: url("/images/SBAdmin/loginpsd-active.png") 0 0;
+    background: url("../images/loginpsd-active.png") 0 0;
 }
 
 .topbar-content {

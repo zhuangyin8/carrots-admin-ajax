@@ -7,8 +7,10 @@
                     <div class="form-group">
                         <label class="control-label col-md-3">角色</label>
                         <div class="col-md-9">
-                            <select class="form-control"  ng-model="vm.rid">
-                                <option ng-repeat="role in vm.roleList" ng-value="role.id" ng-selected="vm.rid == role.id">{{role.name}}</option>
+                            <select class="form-control" ng-model="vm.rid">
+                                <option ng-repeat="role in vm.roleList" ng-value="role.id"
+                                        ng-selected="vm.rid == role.id">{{role.name}}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -17,7 +19,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-3">用户名</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control"  ng-model="vm.list.name">
+                            <input type="text" class="form-control" ng-model="vm.list.name">
                         </div>
                     </div>
                     <!--<label class="control-label">用户名</label>-->
@@ -32,8 +34,11 @@
 </div>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <b>用户列表</b>
-        <button class="btn btn-xs btn-default pull-right" ui-sref="field.managerDetail">+新增</button>
+        用户列表
+
+        <button type="button" class="btn btn-sm btn-info pull-right margin-left-10" ui-sref="field.managerDetail">
+            <span class="glyphicon glyphicon-plus"></span> 新增
+        </button>
     </div>
     <div class="panel-body">
         <div class="table-responsive border">
@@ -60,13 +65,18 @@
                     <td>{{li.updateBy}}</td>
                     <td>{{li.updateAt|date:'yyyy-MM-dd'}}<br>{{li.updateAt|date:'HH:mm:ss'}}</td>
                     <td>
-                        <button class="btn btn-xs btn-success"  ui-sref="field.managerDetail({id:li.id})">编辑</button>
-                        <button class="btn btn-xs btn-danger" ng-click="vm.delete(li.id)">删除</button>
+                         <button class="btn btn-sm btn-info" ui-sref="field.managerDetail({id:li.id})">
+                            <span class="glyphicon glyphicon-edit"></span> 编辑
+                        </button>
+                        <!--<button class="btn btn-xs btn-danger" ng-click="vm.delete(li.id)">删除</button>-->
+                        <button class="btn btn-sm btn-danger" ng-click="vm.delete(li.id)">
+                            <span class="glyphicon glyphicon-remove"></span> 删除
+                        </button>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        <pagination  ng-if="vm.total" total="{{vm.total}}"></pagination>
+        <pagination ng-if="vm.total" total="{{vm.total}}"></pagination>
     </div>
 </div>

@@ -124,8 +124,6 @@ angular.module("admin")
                         }
                     });
                 }
-
-
             }
         }
     });

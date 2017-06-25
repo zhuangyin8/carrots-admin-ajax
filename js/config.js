@@ -46,12 +46,12 @@ angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStra
         });
 
 
-        // $rootScope.$on('$viewContentLoading', function (event) {
-        //     console.log('视图开始加载');
-        // });
-        // $rootScope.$on('$viewContentLoaded', function (event) {
-        //     console.log('视图渲染完毕');
-        // });
+        $rootScope.$on('$viewContentLoading', function (event) {
+            console.log('视图开始加载');
+        });
+        $rootScope.$on('$viewContentLoaded', function (event) {
+            console.log('视图渲染完毕');
+        });
 
         //alert confirm notify
         /**
@@ -135,7 +135,7 @@ angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStra
          *  换肤功能：从本地获取已经存储皮肤
          */
         if (localStorage.cssName) {
-            var name = "css/SBAdmin/" + (localStorage.cssName || 'orange') + ".css";
+            var name = "css/skin/" + (localStorage.cssName || 'orange') + ".css";
             $("#skin").attr("href", name)
         }
     });
@@ -232,6 +232,7 @@ function httpConfig($httpProvider) {
 
 
 }
+
 /**
  *
  * @param $cookies
