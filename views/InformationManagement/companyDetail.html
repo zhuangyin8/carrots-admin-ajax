@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="control-label col-md-4">*公司名称</label>
+                        <label class="control-label col-md-4"><span class="text-danger">*</span>公司名称</label>
                         <div class="col-md-8">
                             <input type="text"
                                    class="form-control"
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="control-label col-md-4">*公司Slogan</label>
+                        <label class="control-label col-md-4"><span class="text-danger">*</span>公司Slogan</label>
                         <div class="col-md-8">
                             <input class="form-control" type="text"
                                    name="companySlogan"
@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="control-label col-md-4">*公司人数</label>
+                        <label class="control-label col-md-4"><span class="text-danger">*</span>公司人数</label>
                         <div class="col-md-8">
                             <input class="form-control"
                                    onkeyup="this.value=this.value.replace(/\D/g,'')"
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="control-label col-md-4">*融资规模</label>
+                        <label class="control-label col-md-4"><span class="text-danger">*</span>融资规模</label>
                         <div class="col-md-8">
                             <select class="form-control"
                                     name="companyScale"
@@ -85,7 +85,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label class="control-label col-md-2 word-spacing-25">*地 区</label>
+                        <label class="control-label col-md-2 word-spacing-25"><span class="text-danger">*</span>地 区</label>
                         <div class="col-md-7">
                             <city-select
                                     ng-if="!vm.companyId || vm.area.province || vm.data.company.id "
@@ -101,7 +101,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label class="col-md-2 control-label word-spacing-25">*行 业</label>
+                        <label class="col-md-2 control-label word-spacing-25"><span class="text-danger">*</span>行 业</label>
                         <div class="col-md-10">
                             <div
                                     isteven-multi-select
@@ -110,6 +110,7 @@
                                     button-label="icon name"
                                     item-label="icon name maker"
                                     tick-property="ticked"
+                                    selection-mode="single"
                             >
                             </div>
                         </div>
@@ -118,7 +119,7 @@
             </div>
             <!--图片上传1-->
             <div class="row form-group">
-                <label class="col-md-2 control-label">*公司Logo</label>
+                <label class="col-md-2 control-label"><span class="text-danger">*</span>公司Logo</label>
                 <div class="col-md-10 padding-0">
                     <div class="col-md-12 ">
                         <label class="btn btn-primary" for="file1">选择文件</label>
@@ -181,7 +182,7 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="control-label col-md-2">*公司介绍</label>
+                <label class="control-label col-md-2"><span class="text-danger">*</span>公司介绍</label>
                 <div class="col-md-10">
                     <textarea class="form-control" required ng-model="vm.data.company.summary" rows="6"
                               maxlength="1000"></textarea>
