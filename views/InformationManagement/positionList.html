@@ -181,14 +181,14 @@
                 <td>{{data.updateAt| date:'yyyy-MM-dd'}}</td>
                 <td>{{data.status|positionStatusFilter}}</td>
                 <td>
-                    <button class="btn btn-sm btn-warning" ng-click="vm.changeStatus(data.status,data.id)">
+                    <button class="btn btn-xs btn-warning" ng-click="vm.changeStatus(data.status,data.id)">
                         {{data.status|positionStatusChangeFilter|positionStatusFilter}}
                     </button>
-                    <button class="btn btn-sm btn-info"
+                    <button class="btn btn-xs btn-info"
                             ui-sref="field.positionDetails({id:data.id,companyId:data.companyId,companyName:data.companyName})">
                         <span class="glyphicon glyphicon-edit"></span> 编辑
                     </button>
-                    <button class="btn btn-sm btn-danger" ng-click="vm.deletePosition(data.id,$index)">
+                    <button class="btn btn-xs btn-danger" ng-click="vm.deletePosition(data.id,$index)">
                         <span class="glyphicon glyphicon-remove"></span>删除
                     </button>
                 </td>

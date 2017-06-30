@@ -118,11 +118,11 @@
                 <td>{{ item.author }}</td>
                 <td>{{item.status|articleStatusFilter}}</td>
                 <td>
-                    <button class="btn btn-sm btn-warning" ng-click="vm.changeArticleStatus(item.id,item.status)">{{item.status|articleStatusChangeFilter}}</button>
-                    <button class="btn btn-sm btn-info" ui-sref="field.articleDetail({id:item.id})">
+                    <button class="btn btn-xs btn-warning" ng-click="vm.changeArticleStatus(item.id,item.status)">{{item.status|articleStatusChangeFilter}}</button>
+                    <button class="btn btn-xs btn-info" ui-sref="field.articleDetail({id:item.id})">
                         <span class="glyphicon glyphicon-edit"></span> 编辑
                     </button>
-                    <button class="btn btn-sm btn-danger" ng-click="vm.deleteArticle(item.id,$index)">
+                    <button class="btn btn-xs btn-danger" ng-click="vm.deleteArticle(item.id,$index)">
                         <span class="glyphicon glyphicon-remove"></span> 删除
                     </button>
                 </td>

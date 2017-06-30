@@ -8,7 +8,6 @@
  * @param $locationProvider
  */
 
-
 function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $locationProvider) {
     var _lazyLoad = function (loaded) {
         return function ($ocLazyLoad) {
@@ -39,12 +38,11 @@ function projectRouteConfig($stateProvider, $urlRouterProvider, $ocLazyLoadProvi
     //更改url格式配置为html5，去掉#号
     // $locationProvider.html5Mode(true);
 
-    // $urlRouterProvider.otherwise('/dashboard');
-    $urlRouterProvider.otherwise('/login');
-    //在路径没有匹配的路由的时候，跳转(重定向)到一个默认的路径
-    //用来配置非 $state 的额外的路由
+    $urlRouterProvider.otherwise('/dashboard');
+    // $urlRouterProvider.otherwise('/login');
+    //在浏览器地址栏输入的路径没有匹配的路由的时候，跳转(重定向)到一个默认的路径,用来配置非 $state 的额外的默认路由
 
-//$state.go 函数可以将状态位置强行切换
+    //$state.go 函数可以将状态位置强行切换
     $stateProvider
         .state('field', {
             url: '',

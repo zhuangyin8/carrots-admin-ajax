@@ -135,21 +135,21 @@
                     <td>{{company.approved|approvedStatusFilter}}</td>
                     <td>{{company.freezed|freezedStatusFilter}}</td>
                     <td>
-                        <button class="btn btn-sm btn-primary"
+                        <button class="btn btn-xs btn-primary"
                                 ui-sref="field.positionList({companyId:company.id,companyName:company.name})">职位
                         </button>
-                        <buttona class="btn btn-sm btn-default" ng-click="vm.approveCompany(company.id,1,company.approved)">
+                        <buttona class="btn btn-xs btn-default" ng-click="vm.approveCompany(company.id,1,company.approved)">
                             {{company.approved|changeApprovedStatusFilter}}
                         </buttona>
-                        <button class="btn btn-sm btn-info" ui-sref="field.companyDetail({companyId:company.id})">
+                        <button class="btn btn-xs btn-info" ui-sref="field.companyDetail({companyId:company.id})">
                             <span class="glyphicon glyphicon-edit"></span> 编辑
                         </button>
 
-                        <button class=" btn btn-sm btn-warning"
+                        <button class=" btn btn-xs btn-warning"
                                 ng-click="vm.freezeCompany(company.id,0,company.freezed)">
                             {{company.freezed|changeFreezedStatusFilter}}
                         </button>
-                        <button class="btn-sm btn btn-danger" href=""
+                        <button class="btn-xs btn btn-danger" href=""
                                 ng-click="vm.delCompany(company.id,$index)">
                             <span class="glyphicon glyphicon-remove"></span> 删除
                         </button>
