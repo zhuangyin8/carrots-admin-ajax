@@ -128,7 +128,7 @@ location /
 
 你只需要记住几个命令即可：
 - 开启nginx命令：start nginx
-- 重启命令：nginx -s reload
+- 重启命令：nginx -s reload( 修改nginx配置文件后重新启动nginx服务 )
 - 关闭命令：nginx -s stop
 
 ### 7.完整的nginx配置文件在项目中的nginx.conf 文件，可以直接替换你的nginx 配置文件
