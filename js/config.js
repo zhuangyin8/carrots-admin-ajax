@@ -46,19 +46,16 @@ angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStra
         });
 
 
-        $rootScope.$on('$viewContentLoading', function (event) {
-            console.log('视图开始加载');
-        });
-        $rootScope.$on('$viewContentLoaded', function (event) {
-            console.log('视图渲染完毕');
-        });
+        // $rootScope.$on('$viewContentLoading', function (event) {
+        //     console.log('视图开始加载');
+        // });
+        // $rootScope.$on('$viewContentLoaded', function (event) {
+        //     console.log('视图渲染完毕');
+        // });
 
         //alert confirm notify
         /**
          *  警告框
-         * @param content
-         *
-         * @param okFn
          */
         $rootScope.alert = function (content, okFn) {
             var modal = $modal({
@@ -78,10 +75,6 @@ angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStra
 
         /**
          * 确认框 confirm
-         *
-         * @param content
-         * @param okFn
-         * @param cancelFn
          */
         $rootScope.confirm = function (content, okFn, cancelFn) {
             var modal = $modal({
@@ -104,11 +97,6 @@ angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStra
         };
         /**
          * 职业列表-删除确认
-         *
-         * @param title
-         * @param content
-         * @param okFn
-         * @param cancelFn
          */
         $rootScope.operationConfirm = function (title, content, okFn, cancelFn) {
             var modal = $modal({
@@ -134,10 +122,10 @@ angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStra
         /**
          *  换肤功能：从本地获取已经存储皮肤
          */
-        if (localStorage.cssName) {
-            var name = "css/skin/" + (localStorage.cssName || 'orange') + ".css";
-            $("#skin").attr("href", name)
-        }
+        // if (localStorage.cssName) {
+        //     var name = "css/skin/" + (localStorage.cssName || 'orange') + ".css";
+        //     $("#skin").attr("href", name)
+        // }
     });
 
 
@@ -214,7 +202,6 @@ function httpConfig($httpProvider) {
     // Set x-www-form-urlencoded Content-Type
     /**
      * 如无特殊标注，所有的Post和Put操作都以Application/json 的方式提交，这样适合于复杂的模型。 一些简单的操作应注明    “application/x-www-form-urlencoded”
-     * @type {string}
      */
     $httpProvider.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';//charset=utf-8
     $httpProvider.defaults.headers.patch['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -233,11 +220,6 @@ function httpConfig($httpProvider) {
 
 }
 
-/**
- *
- * @param $cookies
- * @returns {Function}
- */
 function recordCookies($cookies) {
     return function (params) {
         var cookie = $cookies.records || '{"managerID":"","moduleID":"","targetID":"","operate":""}';

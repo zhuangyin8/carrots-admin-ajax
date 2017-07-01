@@ -23,6 +23,9 @@ angular.module('admin')
                 vm.total = res.data.total;
                 vm.companyList = res.data.data;
             }
+            if (vm.total === 0) {
+                vm.warning = "没有符合此条件的数据";
+            }
         });
 
         // 删除公司信息

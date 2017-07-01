@@ -11,11 +11,10 @@
                             <div class="form-group">
                                 <label for="rolename" class="col-sm-2 control-label">角色名</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="rolename" placeholder="role name"
+                                    <input class="form-control" id="rolename" placeholder="role name"
                                            ng-model="vm.name">
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">权限</label>
                                 <div class="col-sm-10">
@@ -41,32 +40,33 @@
 
                                                 <label for="{{'create' + [$parent.$index] + [$index]}}"
                                                        ng-hide="li.id==87"
-                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].create}"><input
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].create}">
+                                                    <input
                                                         type="checkbox" name=""
                                                         id="{{'create' + [$parent.$index] + [$index]}}"
                                                         ng-model="vm.moduleList[$parent.$index].nodes[$index].create"/>新增&nbsp;</label>
                                                 <label for="{{'update' + [$parent.$index] + [$index]}}"
-                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].update}"><input
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].update}">
+                                                    <input
                                                         type="checkbox" name=""
                                                         id="{{'update' + [$parent.$index] + [$index]}}"
                                                         ng-model="vm.moduleList[$parent.$index].nodes[$index].update"/>编辑&nbsp;</label>
                                                 <label for="{{'delete' + [$parent.$index] + [$index]}}"
                                                        ng-hide="li.id==87"
-                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].delete}"><input
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].delete}">
+                                                    <input
                                                         type="checkbox" name=""
                                                         id="{{'delete' + [$parent.$index] + [$index]}}"
                                                         ng-model="vm.moduleList[$parent.$index].nodes[$index].delete"/>删除&nbsp;</label>
                                                 <label for="{{'sort' + [$parent.$index] + [$index]}}"
                                                        ng-show="li.id==114||li.id==113||li.id==123"
-                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].sort}"><input
+                                                       ng-class="{'text-muted':!vm.moduleList[$parent.$index].nodes[$index].sort}">
+                                                    <input
                                                         type="checkbox" name=""
                                                         id="{{'sort' + [$parent.$index] + [$index]}}"
                                                         ng-model="vm.moduleList[$parent.$index].nodes[$index].sort"/>排序&nbsp;</label>
-
                                             </div>
                                         </li>
-
-
                                     </ul>
                                 </div>
                             </div>

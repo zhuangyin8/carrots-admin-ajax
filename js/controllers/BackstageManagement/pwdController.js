@@ -22,20 +22,12 @@ angular.module('admin')
                     } else {
                         $rootScope.alert(res.data.message)
                     }
-
-
                 })
             } else {
                 var res = {};
                 res.data = {};
                 res.data.message = "密码不一致";
-
                 commonUtil.showErrMsg(res);
-
             }
-
-
         };
-
-
     });

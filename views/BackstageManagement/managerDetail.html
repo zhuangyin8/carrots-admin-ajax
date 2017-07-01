@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label class="control-label col-xs-2 text-right">手机号码</label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" ng-minlength="11" ng-maxlength="11"
+                    <input type="number" class="form-control" ng-minlength="11" ng-maxlength="11"
                            ng-model="vm.data.mobile"
                            ng-disabled="vm.id" placeholder="请输入手机号码" name="mobile">
                     <span class="error" ng-show="formData.$dirty && formData.mobile.$invalid">请输入11位号码</span>
@@ -44,8 +44,8 @@
             <div class="form-group">
                 <label class="control-label col-xs-2 text-right">角色</label>
                 <div class="col-xs-9">
-                    <select class="form-control" style="min-width: 160px" ng-model="vm.data.roleID">
-                        <option value="">请选择</option>
+                    <select class="form-control" ng-model="vm.data.roleID">
+                        <option value="">请选择角色</option>
                         <option ng-repeat="role in vm.roleList" ng-value="role.id" ng-selected="vm.rid == role.id">
                             {{role.name}}
                         </option>
@@ -53,14 +53,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-xs-9 col-xs-offset-2">
+                <div class="col-xs-8 col-xs-offset-2">
                     <div class="col-xs-4">
-                        <button class="btn btn-default btn-block" ng-click="vm.saveOrUpdate()"
-                                ng-disabled="formData.$invalid">保存
+                        <button class="btn btn-success btn-block" ng-click="vm.saveOrUpdate()" ng-disabled="formData.$invalid">保存
                         </button>
                     </div>
                     <div class="col-xs-4">
-                        <button class="btn btn-default btn-block" ui-sref="field.manager">取消</button>
+                        <button class="btn btn-danger btn-block" ui-sref="field.manager">取消</button>
                     </div>
                 </div>
             </div>

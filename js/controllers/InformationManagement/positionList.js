@@ -20,6 +20,9 @@ angular.module('admin')
             } else {
                 $rootScope.alert(res.data.message);
             }
+            if (vm.total === 0) {
+                vm.warning = "没有符合此条件的数据";
+            }
         });
         //上下架
         vm.changeStatus = function (status, id) {

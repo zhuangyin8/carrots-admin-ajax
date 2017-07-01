@@ -8,12 +8,10 @@ angular.module('admin')
             login: "/carrots-admin-ajax/a/login",
             //退出logout      请求方式#地址：post # /a/logout
             logout: "/carrots-admin-ajax/a/logout",
+
             /**
              * 用户管理
-             * @param mid
-             * @returns {*}
              */
-
             manager: function (mid) {
                 if (mid == undefined || mid == "") {
                     // 用户列表
@@ -103,6 +101,7 @@ angular.module('admin')
     /**
      *登录
      */
+    // $ http服务是AngularJS应用程序中最常用的服务之一。该服务向服务器发出请求，并让您的应用程序处理响应。
     .factory('loginService', function ($http, path) {
         return {
             login: function (params) {
