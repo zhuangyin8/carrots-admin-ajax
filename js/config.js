@@ -122,10 +122,10 @@ angular.module('admin', ['oc.lazyLoad', 'ui.router', 'ngCookies', 'mgcrea.ngStra
         /**
          *  换肤功能：从本地获取已经存储皮肤
          */
-        // if (localStorage.cssName) {
-        //     var name = "css/skin/" + (localStorage.cssName || 'orange') + ".css";
-        //     $("#skin").attr("href", name)
-        // }
+        if (localStorage.cssName) {
+            var name = "css/skin/" + (localStorage.cssName || 'orange') + ".css";
+            $("#skin").attr("href", name)
+        }
     });
 
 
