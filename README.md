@@ -2,9 +2,57 @@
 此项目是萝卜多后台管理系统。
 “萝卜多”人才推荐——葡萄藤旗下的主要业务之一，为人才推荐公司，同时也能对人才进行分类以方便浏览。此项目也提供给学员复盘练习使用，学习搭建整套网站的技术和流程。
 
-以下是项目运行的详细 说明，如果还有问题，请在 Issues  中提出，我会尽力解答。
+基于AngularJS1.3.18  + BootStrap  的后台管理系统解决方案
+
+以下是项目运行的详细说明，如果还有问题，请在 Issues  中提出，我会尽力解答。
+
+## 功能 ##
+- [x] BootStrap
+- [x] 登录/注销
+- [x] 表格
+- [x] 表单
+- [x] 富文本编辑器
+- [x] 图片上传
+- [x] 支持切换主题 
+- [x] 列表拖拽排序
+
+## 目录结构介绍 ##
+
+	|-- css                              // 样式文件
+ |   |-- skin                         // 皮肤文件
+ |       |-- base.css                 // 基础样式
+ |       |-- public.css               // 公共样式
+	|-- images                           // 图片文件
+	|-- js                               // 源码目录
+	|   |-- constant                  // 组件
+ |   |-- controller                  // 组件
+ |   |-- constant                  // 组件
+ |   |-- constant                  // 组件
+	|       |-- common                   // 公共组件
+	|           |-- Header.vue           // 公共头部
+	|           |-- Home.vue           	 // 公共路由入口
+	|           |-- Sidebar.vue          // 公共左边栏
+	|		|-- page                   	 // 主要路由页面
+	|           |-- BaseCharts.vue       // 基础图表
+	|           |-- BaseForm.vue         // 基础表单
+	|           |-- BaseTable.vue        // 基础表格
+	|           |-- Login.vue          	 // 登录
+	|           |-- Markdown.vue         // markdown组件
+	|           |-- Readme.vue           // 自述组件
+	|           |-- Upload.vue           // 图片上传
+	|           |-- VueEditor.vue        // 富文本编辑器
+	|           |-- VueTable.vue         // vue表格组件
+	|   |-- App.vue                      // 页面入口文件
+	|   |-- main.js                      // 程序入口文件，加载各种公共组件
+	|-- .babelrc                         // ES6语法编译配置
+	|-- .editorconfig                    // 代码编写规格
+	|-- .gitignore                       // 忽略的文件
+	|-- index.html                       // 入口html文件
+	|-- package.json                     // 项目及工具的依赖配置文件
+	|-- README.md                        // 说明
 
 ## 在线运行此项目?
+
 [在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
 账号:admin
 密码:123456
