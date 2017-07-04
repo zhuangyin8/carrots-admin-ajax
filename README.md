@@ -33,7 +33,7 @@
 |   |-- directives                   // 自定义指令目录
 |   |-- factory                      // 工厂目录
 |   |-- filter                       // 过滤器目录
-|    |-- server                        // 请求地址与方式目录
+|    |-- server                      // 请求地址与方式目录
 |   |-- config.js                    // 统一配置
 |   |-- router.js                    // 路由
 |-- vendor                           // 富文本编辑器
@@ -54,7 +54,7 @@
 ## 页面逻辑图
 ![萝卜多后台管理系统脑图](assets/README-25430857.png)
 
-[百度脑图在线地址](http://naotu.baidu.com/file/42bbc924aa4f4e49cfd218a49ea67ba3?token=1e7a9e3c31400cf3)
+[最新版本百度脑图在线地址](http://naotu.baidu.com/file/42bbc924aa4f4e49cfd218a49ea67ba3?token=1e7a9e3c31400cf3)
 
 ## 项目截图
 
@@ -71,7 +71,7 @@
 ![成功删除](assets/README-40458cff.png)
 - 富文本编辑器和图片上传
 ![富文本编辑器和图片上传](assets/README-2a1519a0.png)
-
+![富文本编辑器和图片上传动态图](assets/README-686932bf.gif)
 ## 在线运行此项目?
 [系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
 
