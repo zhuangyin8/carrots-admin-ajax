@@ -6,7 +6,7 @@
 
 以下是项目运行的详细说明，如果还有问题，请在 Issues 中提出，我会尽力解答。
 
-# 功能
+## 功能
 
 - [x] BootStrap
 - [x] 登录/注销
@@ -17,7 +17,7 @@
 - [x] 支持切换主题
 - [x] 列表拖拽排序
 
-# 目录结构介绍
+## 目录结构介绍
 
 ```
 |-- css                              // CSS样式目录
@@ -51,45 +51,45 @@
 |-- README.md                        // 项目介绍
 ```
 
-# 页面逻辑图
-
-![萝卜多后台管理系统脑图](https://pic1.zhimg.com/v2-f67da0ea9031c842aa9b44d73298e248_r.png)
+## 页面逻辑图
+![萝卜多后台管理系统脑图](assets/README-25430857.png)
 
 [百度脑图在线地址](http://naotu.baidu.com/file/42bbc924aa4f4e49cfd218a49ea67ba3?token=1e7a9e3c31400cf3)
 
-# 项目截图
+## 项目截图
 
 - 登录页面
-
 ![深蓝色皮肤登录页面](assets/README-f6444b6f.png)
 ![橙色皮肤登陆页面](assets/README-4701bc36.png)
-
 ![动态登录页面](assets/动态登录.gif)
-
+- 欢迎页面
 ![欢迎页面](assets/README-92d818f2.png)
+- 信息管理
 ![信息管理公司列表页面](assets/README-fbb1e82c.png)
+- 模态框
 ![点击删除按钮弹出框](assets/README-8650dc55.png)
 ![成功删除](assets/README-40458cff.png)
+- 富文本编辑器和图片上传
 ![富文本编辑器和图片上传](assets/README-2a1519a0.png)
-# 在线运行此项目?
 
+## 在线运行此项目?
 [系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
 
 账号:admin
 
 密码:123456
 
-# 本地运行项目
+## 本地运行项目
 
-## 0\. 先将项目clone 到你的电脑本地
+### 0. 先将项目clone 到你的电脑本地
 
-## 1\. [nginx 官网](https://nginx.org/en/download.html)下载 nginx
+### 1. [nginx 官网](https://nginx.org/en/download.html)下载 nginx
 
 ![nginx](https://nginx.org/nginx.png)
 
 点击[下载 nginx](https://nginx.org/download/nginx-1.13.1.zip) 直接下载之后 解压到相应的目录了，不用安装就可以直接用了，文件夹名字命为 `nginx`
 
-## 2\. 测试`nginx`是否能成功启动
+### 2. 测试`nginx`是否能成功启动
 
 打开之前存储解压之后的`nginx`文件夹，双击`nginx.exe` ，这是你会发现有个黑色弹出框一闪即逝；这说明它启动了；
 
@@ -105,13 +105,13 @@
 
 > 怎样关闭`nginx`呢？因为你看不到它执行的文件，只能从任务管理器里关，但这显然是个麻烦而糟糕的办法。更好的办法，请参考下文的`nginx`使用技巧和常用命令。
 
-## 3\. `nginx`安装
+### 3. `nginx`安装
 
 `nginx`的安装非常简单，只需到其 [官网](http://nginx.org/) 下载，这是一个压缩包文件，把它解压到自定义文件夹即可，如`E:\nginx-1.13.1`(安装路径下禁止中文)。
 
 打开文件夹，第一层文件目录里就有一个`nginx.exe`文件，双击打开，一个黑框一闪而过，任务管理器里有`nginx.exe`的进程。然后打开一个浏览器，访问`localhost`，如果出现`nginx`的欢迎界面，表示你的`nginx`已经安装成功。
 
-## 4\. 配置Nginx的配置文件
+### 4. 配置Nginx的配置文件
 
 文件夹中的conf文件下的nginx.conf就是配置文件，你通过浏览器输入`localhost`出现的页面即为文件夹 `nginx`下`html`文件中的index.html；所以你可以将你想要检测的产品放到`html`文件夹中，并将原本的index.html文件给删了，这个时候打开网页输入localhost，使用ctrl+F5清下浏览器缓存即出现你产品中的index.html(产品的首页都会命名为index.html）页面，然后进行一系列测试看看是否OK。
 
@@ -164,7 +164,7 @@
 
 这段代码的作用可以认为是，调用接口时，用到/carrots-admin-ajax/的部分将被替换为<http://dev.admin.carrots.ptteng.com/。>
 
-## 5\. 修改配置文件
+### 5. 修改配置文件
 
 上面说到配置可以不修改，但在实际的测试过程中，一般不大可能会将产品往nginx文件里的html文件夹中塞，这个时候咱们就得改下配置了；请打开`nginx`文件夹下的`conf`文件夹，里面有个`nginx.conf`文件，用文本编辑器 (Atom, Sublime或者微软自带的文本编辑器)打开它。
 
@@ -184,7 +184,7 @@ location /
 
 改为
 
-```t
+```
 location /
 {
     #root：里面配置了root，表示当匹配这个请求的路径时，将会在这个文件夹内寻找相应的文件，这里对我们之后的静态文件伺服很有用。
@@ -196,7 +196,7 @@ location /
 
 然后重启nginx。
 
-## 6\. nginx使用技巧和常用命令
+### 6. nginx使用技巧和常用命令
 
 因为nginx在使用时要经常重启，所以最好在命令行使用nginx，效率比在任务管理器里找到进程关闭，然后再双击打开高很多。
 
@@ -206,4 +206,4 @@ location /
 - 重启命令：nginx -s reload( 修改nginx配置文件后重新启动nginx服务 )
 - 关闭命令：nginx -s stop
 
-## 7.完整的nginx配置文件在项目中的nginx.conf 文件，可以直接替换你的nginx 配置文件
+### 7.完整的nginx配置文件在项目中的nginx.conf 文件，可以直接替换你的nginx 配置文件
