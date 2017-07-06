@@ -857,6 +857,7 @@
             return r;
         }
     };
+
     /**
      * 获得对象所拥有监听类型的所有监听器
      * @public
@@ -4797,6 +4798,7 @@
                 'data': noTrans ? data : utils.unhtml(data || '')
             })
         };
+
         function nodeToHtml(node, arr, formatter, current) {
             switch (node.type) {
                 case 'root':
@@ -6698,6 +6700,7 @@
 
         me.undoManger = new UndoManager();
         me.undoManger.editor = me;
+
         function saveScene() {
             this.undoManger.save();
         }
@@ -6766,6 +6769,7 @@
                     me.undoManger.save(true);
                 }
                 clearTimeout(saveSceneTimer);
+
                 function save(cont) {
 
                     if (cont.selection.getRange().collapsed)
@@ -7146,6 +7150,7 @@
             me.setOpt({
                 sourceEditorFirst: false
             });
+
             function createSourceEditor(holder) {
                 return sourceEditors.textarea(me, holder);
             }
@@ -9979,6 +9984,7 @@
                 var T = this;
 
                 editor.langIsReady ? $.proxy(renderUI, T)() : editor.addListener("langReady", $.proxy(renderUI, T));
+
                 function renderUI() {
 
 

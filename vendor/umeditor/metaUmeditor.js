@@ -50,7 +50,6 @@ angular.module('meta.umeditor', [])
                         ngModel.$setViewValue(_umeditor.getContent());
                     else
                         ngModel.$setViewValue('');
-
                 };
 
                 /**
@@ -75,7 +74,6 @@ angular.module('meta.umeditor', [])
                             scope.$emit(scope.emitName, _umeditor);
                         });
                     });
-
                 };
 
                 /**
@@ -94,8 +92,6 @@ angular.module('meta.umeditor', [])
                     }
 
                 });
-
-
                 /**
                  * 添加编辑器取消选中事件
                  * 如content值为空
@@ -103,19 +99,15 @@ angular.module('meta.umeditor', [])
                  *   添加content为提示文案
                  */
                 _umeditor.addListener('blur', function () {
-
                     if (!_umeditor.hasContents()) {
                         ngModel.$viewValue = '';
                         _umeditor.removeListener('contentChange', editorToModel);
                         _umeditor.setContent(_placeholder);
-
                     } else {
                         ngModel.$viewValue = _umeditor.getContent();
                         _umeditor.removeListener('contentChange', editorToModel);
                     }
-
                 });
-
             }
         }
     });
