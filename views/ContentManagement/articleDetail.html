@@ -9,9 +9,9 @@
                 <label class="col-md-2 control-label word-spacing-25"><span class="text-danger">*</span>标 题</label>
                 <div class="col-md-8">
                     <input class="form-control" name="title" ng-model="vm.params.title" required>
-                    <div class="checkbox" ng-show="myForm.title.$invalid && myForm.title.$dirty">
+                    <span class="error" ng-show="myForm.title.$invalid && myForm.title.$dirty">
                         * 标题不能为空
-                    </div>
+                    </span>
                 </div>
             </div>
 
@@ -25,9 +25,9 @@
                         <option value="2">找精英Banner</option>
                         <option value="3">行业大图</option>
                     </select>
-                    <div class="checkbox" ng-show="myForm.type.$invalid && myForm.type.$dirty">
+                    <span class="error" ng-show="myForm.type.$invalid && myForm.type.$dirty">
                         * 类型不能为空
-                    </div>
+                    </span>
                 </div>
                 <div class="col-md-2">
                     <!--当类型选择行业大图,即 vm.params.type==3,才显示行业的下拉选择框-->
@@ -42,23 +42,24 @@
                         <option value="5">金融</option>
                         <option value="6">游戏</option>
                     </select>
-                    <div class="checkbox" ng-show="myForm.industry.$invalid && myForm.industry.$dirty">
+                    <span class="error" ng-show="myForm.industry.$invalid && myForm.industry.$dirty">
                         * 行业不能为空
-                    </div>
+                    </span>
+
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-md-2 control-label word-spacing-25"> 说 明</label>
+                <label class="col-md-2 control-label word-spacing-25"><span class="text-danger">*</span>说 明</label>
                 <div class="col-md-8">
                     <!--<input class="form-control" type="text" ng-model="vm.params.content" name="content" required>-->
                     <!--富文本编辑器-->
                      <div type="text/html" style="margin:auto;height:200px;" ng-model="vm.params.content"
-                         name="content" meta-umeditor meta-umeditor-placeholder="说明不能为空" required="">
+                         name="content" meta-umeditor meta-umeditor-placeholder="说明 " required="">
                     </div>
-                     <div class="checkbox" ng-show="myForm.content.$invalid && myForm.content.$dirty">
+                     <span class="error" ng-show="myForm.content.$invalid && myForm.content.$dirty">
                         * 说明不能为空
-                    </div>
+                    </span>
                 </div>
 
             </div>
@@ -67,9 +68,9 @@
                 <label class="col-md-2 control-label"><span class="text-danger">*</span>跳转链接</label>
                 <div class="col-md-8">
                     <input class="form-control" ng-model="vm.params.url" name="url" required>
-                    <div class="checkbox" ng-show="myForm.url.$invalid && myForm.url.$dirty">
+                    <span class="error" ng-show="myForm.url.$invalid && myForm.url.$dirty">
                         * 跳转链接不能为空
-                    </div>
+                    </span>
                 </div>
             </div>
 

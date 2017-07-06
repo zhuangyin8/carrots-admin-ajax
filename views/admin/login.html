@@ -23,12 +23,12 @@
                                        ng-pattern="/^\w{6,16}$/" required>
                                 <div class="login-psd-icon"></div>
                             </div>
-                            <p class="text-danger" ng-show="loginForm.username.$invalid && loginForm.username.$dirty">
+                            <span class="error" ng-show="loginForm.username.$invalid && loginForm.username.$dirty">
                                 * 请输入5位到16位的由英文或数字组成的账号
-                            </p>
-                            <p class="text-danger" ng-show="loginForm.password.$invalid && loginForm.password.$dirty">
+                            </span>
+                            <span class="error" ng-show="loginForm.password.$invalid && loginForm.password.$dirty">
                                 * 请输入6到16位数字、字母或下划线组成的密码
-                            </p>
+                            </span>
                             <p class="text-danger">{{vm.errorTip}}</p>
                             <button class="btn btn-lg btn-submit btn-block login-btn" ng-click="vm.submit()"
                                     ng-disabled="loginForm.$invalid">登录
