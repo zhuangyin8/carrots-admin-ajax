@@ -1,14 +1,14 @@
 <div class="sidebar ng-isolate-scope" role="navigation">
     <!--collapse控制默认显示还是隐藏-->
     <div class="sidebar-nav navbar-collapse collapse">
-         <ul class="nav in side" id="side-menu" ng-model="collapseVar" role="tablist" aria-multiselectable="true"
+        <ul class="nav in side" id="side-menu" ng-model="collapseVar" role="tablist" aria-multiselectable="true"
             bs-collapse>
 
 
             <li class="active">
                 <!--ui-sref-active="active" -->
                 <a href="#/dashboard">
-                     <span class="glyphicon glyphicon-dashboard"></span>
+                    <span class="glyphicon glyphicon-dashboard"></span>
                     欢迎页
                 </a>
             </li>
@@ -17,10 +17,10 @@
             <li class="nav-first-level" ng-class="{active: collapseVar==($index)}" ng-repeat="side in sideList">
                 <a href="" bs-collapse-toggle role="tab">
                     <!--侧边栏一级菜单文字前图标-->
-                     <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
                     {{side.name}}
-                     <span class="glyphicon glyphicon-triangle-left"></span>
-                 </a>
+                    <span class="glyphicon glyphicon-triangle-left"></span>
+                </a>
                 <!--二级菜单-->
                 <ul class="nav nav-second-level side" ng-class={in:side.se} role="tabpanel" bs-collapse-target>
                     <li ui-sref-active="active" ng-repeat="n in side.nodes">

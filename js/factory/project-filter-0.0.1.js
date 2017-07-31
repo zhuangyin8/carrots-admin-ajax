@@ -2,11 +2,11 @@
  *
  */
 angular.module('admin')
-    /**
-     * 公司列表
-     */
+/**
+ * 公司列表
+ */
 
-    // 公司行业
+// 公司行业
     .filter('companyIndustryFilter', function (industry) {
         var a = industry.length;
         return function (param) {

@@ -1,73 +1,27 @@
 <ul class="pagination pull-right">
-    <!--<style>-->
-    <!--.pagination>li>a[disabled],-->
-    <!--.pagination>li>a[disabled]:hover {-->
-    <!--cursor: not-allowed;-->
-    <!--}-->
-    <!--</style>-->
     <li class="pull-left paginationCenter">
         每页显示
-        <input type="number" class="paginationGo text-center" ng-model="size" ng-change="changeSize()"/>
+        <input type="text" class="paginationGo text-center" ng-model="size" ng-change="changeSize()"/>
         条
     </li>
 
     <li><a ng-disabled="isDisabled(1)" ng-click="goPage(1)">首页</a></li>
-    <li><a ng-if="isHavePrePage()" ng-click="goPage(activePage - 1)"> 上一页 </a></li>
+    <li><a ng-if="isHavePrePage()" ng-click="goPage(activePage - 1)"> < </a></li>
 
     <li ng-repeat="li in pageList track by $index" ng-class="{'active': isActive(li)}">
         <a ng-disabled="isDisabled(li)" ng-click="goPage(li)"> {{li}} </a>
     </li>
 
-    <li><a ng-if="isHaveNextPage()" ng-click="goPage(activePage + 1)"> 下一页 </a></li>
+    <li><a ng-if="isHaveNextPage()" ng-click="goPage(activePage + 1)"> > </a></li>
     <li><a ng-disabled="isDisabled(totalPage)" ng-click="goPage(totalPage)">末页</a></li>
     <li>
         去第
-        <input type="number" class="paginationGo text-center" ng-model="jumpPage" ng-change="changeInput()"/>
+        <input type="text" class="paginationGo text-center" ng-model="jumpPage" ng-change="changeInput()"/>
         页
-        <button class="pull-right btn btn-primary" style="border-radius:0" ng-click="goPage(jumpPage)">确定</button>
+        <a  class="pull-right" style="border-radius:0" ng-click="goPage(jumpPage)">确定</a>
     </li>
-
-
-    <!--<ul class="pagination pull-right">-->
-        <!--&lt;!&ndash;<style>&ndash;&gt;-->
-        <!--&lt;!&ndash;.pagination > li > a[disabled] {&ndash;&gt;-->
-        <!--&lt;!&ndash;cursor: not-allowed;&ndash;&gt;-->
-        <!--&lt;!&ndash;/*按钮不可点击时的状态*/&ndash;&gt;-->
-        <!--&lt;!&ndash;}&ndash;&gt;-->
-        <!--&lt;!&ndash;</style>&ndash;&gt;-->
-        <!--&lt;!&ndash;@庄引&ndash;&gt;-->
-
-        <!--<li class="pull-left paginationCenter">-->
-            <!--每页显示-->
-            <!--<input type="number" min="1" class="paginationGo text-center" ng-model="size" ng-change="changeSize()"/>-->
-            <!--&lt;!&ndash;min指定了最小值，max最大值，step则为步长。这些属性都是可以省略的 但是每页显示数据最少为1&ndash;&gt;-->
-            <!--条-->
-        <!--</li>-->
-
-        <!--<li><a ng-disabled="isDisabled(1)" ng-click="goPage(1)">首页</a></li>-->
-        <!--<li><a ng-if="isHavePrePage()" ng-click="goPage(activePage - 1)"> 上一页 </a></li>-->
-
-        <!--&lt;!&ndash;<li ng-repeat="li in pageList track by $index" ng-class="{'active': isActive(li)}">&ndash;&gt;-->
-        <!--&lt;!&ndash;<a ng-disabled="isDisabled(li)" ng-click="goPage(li)"> {{li}} </a>&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-
-        <!--&lt;!&ndash;显示当前页数&ndash;&gt;-->
-        <!--<li><a type="button" class="btn  btn-default" disabled="disabled">第{{activePage}}页</a></li>-->
-        <!--<li><a ng-if="isHaveNextPage()" ng-click="goPage(activePage + 1)"> 下一页 </a></li>-->
-        <!--<li><a ng-disabled="isDisabled(totalPage)" ng-click="goPage(totalPage)">末页</a></li>-->
-        <!--&lt;!&ndash;显示当前页数&ndash;&gt;-->
-        <!--<li>-->
-            <!--去第-->
-            <!--<input type="number" min="1" max={{totalPage}} class="paginationGo text-center" ng-model="jumpPage"-->
-                   <!--ng-change="changeInput()"/>-->
-            <!--&lt;!&ndash;数字输入框只能输入数字,但为什么字符"e"和字符"E"可以输入?&ndash;&gt;-->
-            <!--页-->
-            <!--<button class="pull-right btn btn-primary" ng-click="goPage(jumpPage)">确定</button>-->
-            <!--&lt;!&ndash;style="border-radius:0"&ndash;&gt;-->
-        <!--</li>-->
-        <!--&lt;!&ndash;分页功能&ndash;&gt;-->
-    <!--</ul>-->
 </ul>
+
 
 
 

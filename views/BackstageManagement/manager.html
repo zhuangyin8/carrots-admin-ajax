@@ -1,4 +1,3 @@
-
 <div class="panel panel-default">
     <div class="panel-body">
         <form class="form-horizontal">
@@ -7,8 +6,10 @@
                     <div class="form-group">
                         <label class="control-label col-md-3">角色</label>
                         <div class="col-md-9">
-                            <select class="form-control"  ng-model="vm.rid">
-                                <option ng-repeat="role in vm.roleList" ng-value="role.id" ng-selected="vm.rid == role.id">{{role.name}}</option>
+                            <select class="form-control" ng-model="vm.rid">
+                                <option ng-repeat="role in vm.roleList" ng-value="role.id"
+                                        ng-selected="vm.rid == role.id">{{role.name}}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -17,7 +18,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-3">用户名</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control"  ng-model="vm.list.name">
+                            <input type="text" class="form-control" ng-model="vm.list.name">
                         </div>
                     </div>
                     <!--<label class="control-label">用户名</label>-->

@@ -34,7 +34,7 @@ angular.module('admin')
                         // $rootScope.permissionsSet = JSON.parse(localStorage["permissionsSet"]);
 
                         //深拷贝
-                        $rootScope.permissionsSet =JSON.parse(JSON.stringify(res.data.data.role.permissionsSet))
+                        $rootScope.permissionsSet = JSON.parse(JSON.stringify(res.data.data.role.permissionsSet))
 
                         if (sessionStorage.mineSide == '' || sessionStorage.mineSide == undefined) {
                             moduleService.batchGetModule(moduleIDs).then(function (res) {

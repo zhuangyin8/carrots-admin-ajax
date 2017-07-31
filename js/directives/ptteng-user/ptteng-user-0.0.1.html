@@ -1,23 +1,19 @@
 <ul class="nav navbar-top-links navbar-right">
     <li class="dropdown pull-right">
-        <span class="vertical">|</span>
         <a class="dropdown-character"><span>{{user.role.name}}</span></a>
         <span class="vertical">|</span>
-        <a class="dropdown-name"><span class="glyphicon glyphicon-user"></span> {{user.manager.name}}</a>
-        <!--出于性能的考虑，所有图标都需要一个基类和对应每个图标的类。把下面的代码放在任何地方都可以正常使用。
-        注意，为了设置正确的内补（padding），务必在图标和文本之间添加一个空格。-->
+        <a class="dropdown-name"><span>{{user.manager.name}}</span></a>
         <span class="vertical">|</span>
-
         <a class="dropdown-toggle dropdown-close" ng-click="logout()">
-            <span class="glyphicon glyphicon-off"></span> 退出
+            <span class="glyphicon glyphicon-off"></span>
         </a>
-
         <!--<ul class="dropdown-menu dropdown-ptteng-user" role="menu" aria-labelledby="single-button">-->
-            <!--<li><a href="#"><i class="fa fa-ptteng-user fa-fw"></i> 用户信息</a></li>-->
-            <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> 用户设置</a></li>-->
-            <!--<li class="divider"></li>-->
-            <!--<li><a ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> 注销</a>-->
-            <!--</li>-->
-        <!--</ul>-->
+        <!--<li><a href="#"><i class="fa fa-ptteng-user fa-fw"></i> 用户信息</a></li>-->
+        <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> 用户设置</a></li>-->
+        <!--<li class="divider"></li>-->
+        <!--<li><a ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> 注销</a>-->
+        <!--</li>-->
+        <!--</ul>&ndash;&gt;-->
     </li>
 </ul>
+

@@ -54,10 +54,10 @@
                 <div class="col-md-8">
                     <!--<input class="form-control" type="text" ng-model="vm.params.content" name="content" required>-->
                     <!--富文本编辑器-->
-                     <div type="text/html" style="margin:auto;height:200px;" ng-model="vm.params.content"
+                    <div type="text/html" style="margin:auto;height:200px;" ng-model="vm.params.content"
                          name="content" meta-umeditor meta-umeditor-placeholder="说明 " required="">
                     </div>
-                     <span class="error" ng-show="myForm.content.$invalid && myForm.content.$dirty">
+                    <span class="error" ng-show="myForm.content.$invalid && myForm.content.$dirty">
                         * 说明不能为空
                     </span>
                 </div>
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <div class="form-group">
-                 <div class="col-md-8  col-md-offset-2">
+                <div class="col-md-8  col-md-offset-2">
                     <!-- 每个input都不为空且验证通过时且图片上传，最下方的提交按钮才变为可使用状态-->
                     <button type="button" class="btn btn-success" ng-click="vm.publishArticle() "
                             ng-disabled="myForm.$invalid||vm.params.img===undefined">立即上线

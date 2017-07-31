@@ -278,6 +278,7 @@ angular.module('admin')
                     arr.push(item)
                 }
                 console.log(arr);
+
                 //判断是否存在
                 function judgementExistence() {
                     return arr.some(function (ite) {

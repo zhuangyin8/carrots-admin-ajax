@@ -6,7 +6,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">在招公司</label>
                         <div class="col-md-8">
-                            <input class="form-control"  ng-model="vm.searchParams.companyName">
+                            <input class="form-control" ng-model="vm.searchParams.companyName">
                         </div>
                     </div>
                 </div>
@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">职位名称</label>
                         <div class="col-md-8">
-                            <input  class="form-control" ng-model="vm.searchParams.name">
+                            <input class="form-control" ng-model="vm.searchParams.name">
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">发布时间</label>
                         <div class="col-md-8">
-                            <input  class="form-control" size="20" bs-datepicker autoclose="true"
+                            <input class="form-control" size="20" bs-datepicker autoclose="true"
                                    data-date-format="yyyy-MM-dd" data-date-type="number"
                                    ng-model="vm.searchParams.startAt" data-max-date="{{vm.searchParams.endAt}}">
                         </div>
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4 text-center">—</label>
                         <div class="col-md-8">
-                            <input   class="form-control" size="20" bs-datepicker autoclose="true"
+                            <input class="form-control" size="20" bs-datepicker autoclose="true"
                                    data-date-format="yyyy-MM-dd" data-date-type="number"
                                    ng-model="vm.searchParams.endAt" data-min-date="{{vm.searchParams.startAt}}"
                                    data-max-date="today">

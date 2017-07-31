@@ -8,9 +8,9 @@
  */
 
 angular.module("admin")
-    /**
-     * 状态
-     */
+/**
+ * 状态
+ */
     .filter("statusShow", function (upOrDown) {
         return function (value) {
             return upOrDown[value]
