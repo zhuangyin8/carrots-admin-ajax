@@ -144,7 +144,6 @@ angular.module('admin')
                     $state.go($state.current, {page: page || 1, size: scope.size},
                         {reload: true});
                 };
-            },
-        };
-
+            }
+        }
     });

@@ -3,7 +3,7 @@
  */
 angular.module("admin")
 
-    // 公司行业
+// 公司行业
     .constant('industry', [
         {id: 0, name: '移动互联网'},
         {id: 1, name: '电子商务'},

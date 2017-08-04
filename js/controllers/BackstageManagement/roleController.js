@@ -33,6 +33,5 @@ angular.module('admin')
                     commonUtil.showReturnMsg(res, "field.role");
                 });
             });
-
         };
     });

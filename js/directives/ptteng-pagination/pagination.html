@@ -1,24 +1,24 @@
 <ul class="pagination pull-right">
     <li class="pull-left paginationCenter">
         每页显示
-        <input type="text" class="paginationGo text-center" ng-model="size" ng-change="changeSize()"/>
+        <input  class="paginationGo text-center" ng-model="size" ng-change="changeSize()"/>
         条
     </li>
 
     <li><a ng-disabled="isDisabled(1)" ng-click="goPage(1)">首页</a></li>
-    <li><a ng-if="isHavePrePage()" ng-click="goPage(activePage - 1)"> < </a></li>
+    <li><a ng-if="isHavePrePage()" ng-click="goPage(activePage - 1)"> 上一页 </a></li>
 
     <li ng-repeat="li in pageList track by $index" ng-class="{'active': isActive(li)}">
         <a ng-disabled="isDisabled(li)" ng-click="goPage(li)"> {{li}} </a>
     </li>
 
-    <li><a ng-if="isHaveNextPage()" ng-click="goPage(activePage + 1)"> > </a></li>
+    <li><a ng-if="isHaveNextPage()" ng-click="goPage(activePage + 1)"> 下一页</a></li>
     <li><a ng-disabled="isDisabled(totalPage)" ng-click="goPage(totalPage)">末页</a></li>
     <li>
         去第
-        <input type="text" class="paginationGo text-center" ng-model="jumpPage" ng-change="changeInput()"/>
+        <input  class="paginationGo text-center" ng-model="jumpPage" ng-change="changeInput()"/>
         页
-        <a  class="pull-right" style="border-radius:0" ng-click="goPage(jumpPage)">确定</a>
+        <a class="pull-right" style="border-radius:0" ng-click="goPage(jumpPage)">确定</a>
     </li>
 </ul>
 

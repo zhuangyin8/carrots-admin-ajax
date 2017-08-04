@@ -1,25 +1,26 @@
 <div class="panel panel-default">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="article">
         <div class="panel-body">
             <div class="row pd-bottom-2">
                 <div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{'has-error': article.date.$invalid}">
                         <label class="control-label col-md-4">修改时间</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" size="20" bs-datepicker autoclose="true"
-                                   data-date-format="yyyy-MM-dd" data-date-type="number" readonly
+                                   data-date-format="yyyy-MM-dd" data-date-type="number" aria-readonly=""
                                    data-max-date="{{vm.searchParams.endAt}}"
-                                   ng-model="vm.searchParams.startAt">
+                                   ng-model="vm.searchParams.startAt" name="date">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{'has-error': article.date2.$invalid}">
                         <label class="control-label col-md-4 text-center">至</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" size="20" bs-datepicker autoclose="true"
                                    data-date-format="yyyy-MM-dd" data-date-type="number"
-                                   ng-model="vm.searchParams.endAt" data-min-date="{{vm.searchParams.startAt}}">
+                                   ng-model="vm.searchParams.endAt" name="date2"
+                                   data-min-date="{{vm.searchParams.startAt}}">
                         </div>
                     </div>
                 </div>

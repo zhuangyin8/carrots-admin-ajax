@@ -14,15 +14,15 @@ angular.module('admin')
              */
             manager: function (mid) {
                 if (mid == undefined || mid == "") {
-                    // 用户列表
+                    //  用户列表:Get  /a/u/manager/
                     return "/carrots-admin-ajax/a/u/manager";
                 } else {
-                    // 根据ID查找用户 //修改用户 //删除用户
+                    // 根据ID查找用户:Get  /a/u/manager/{mid} // 修改用户：Put  /a/u/manager/{mid} // 删除用户: Delete   /a/u/manager/{mid}
                     return "/carrots-admin-ajax/a/u/manager/" + mid;
                 }
 
             },
-            // 增加用户
+            // 增加用户：Post  /a/u/manager
             manager_list: "/carrots-admin-ajax/a/u/manager/",
             // 批量获取用户详细信息
             manager_multi_detail: function (params) {
@@ -268,6 +268,7 @@ angular.module('admin')
                 return moduleService.batchGetModule(moduleIDS);
 
             },
+            //批量获取角色详细信息
             batchGetRole: function (params) {
                 return $http.get(path.role_multi_detail(params));
             },

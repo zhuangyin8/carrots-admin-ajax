@@ -7,7 +7,7 @@ angular.module('admin')
         vm.id = $state.params.id;
 
 
-        var roleParam={size:65535};
+        var roleParam = {size: 65535};
 
         $scope.roleList = {};
 
@@ -22,17 +22,16 @@ angular.module('admin')
                         vm.roleList = res.data.data.roleList;
                         console.log(vm.roleList)
                     } else {
-                         commonUtil.showErrMsg(res);
+                        commonUtil.showErrMsg(res);
                     }
                 });
             } else {
-                 commonUtil.showErrMsg(res);
+                commonUtil.showErrMsg(res);
             }
         });
 
 
         vm.saveOrUpdate = function () {
-                managerService.saveOrUpdateManager(vm.id, vm.data,"field.manager");
+            managerService.saveOrUpdateManager(vm.id, vm.data, "field.manager");
         }
-
     });
