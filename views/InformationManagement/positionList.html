@@ -150,7 +150,7 @@
         <button class="btn btn-xs btn-danger pull-right"
                 ui-sref="field.positionDetails({companyId:vm.searchParams.companyId,companyName:vm.searchParams.companyName})"
                 ng-show="vm.searchParams.companyId">
-            <span class="glyphicon glyphicon-plus"></span>新增
+            <i class="fa fa-plus"></i>新增
         </button>
     </div>
     <div class="panel-body table-responsive">
@@ -186,10 +186,10 @@
                     </button>
                     <button class="btn btn-xs btn-info"
                             ui-sref="field.positionDetails({id:data.id,companyId:data.companyId,companyName:data.companyName})">
-                        <span class="glyphicon glyphicon-edit"></span> 编辑
+                        <i class="fa fa-edit"></i> 编辑
                     </button>
                     <button class="btn btn-xs btn-danger" ng-click="vm.deletePosition(data.id,$index)">
-                        <span class="glyphicon glyphicon-remove"></span>删除
+                        <i class="fa fa-remove"></i>删除
                     </button>
                 </td>
             </tr>

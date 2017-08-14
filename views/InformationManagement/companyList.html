@@ -106,7 +106,7 @@
     <div class="panel-heading">
         公司列表
         <button type="button" class="btn btn-sm btn-info pull-right margin-left-10" ui-sref="field.companyDetail">
-            <span class="glyphicon glyphicon-plus"></span> 新增
+            <i class="fa fa-plus"></i> 新增
         </button>
     </div>
     <div class="panel-body">
@@ -142,7 +142,7 @@
                             {{company.approved|changeApprovedStatusFilter}}
                         </buttona>
                         <button class="btn btn-xs btn-info" ui-sref="field.companyDetail({companyId:company.id})">
-                            <span class="glyphicon glyphicon-edit"></span> 编辑
+                            <i class="fa fa-edit"></i> 编辑
                         </button>
 
                         <button class=" btn btn-xs btn-warning"
@@ -151,7 +151,7 @@
                         </button>
                         <button class="btn-xs btn btn-danger" href=""
                                 ng-click="vm.delCompany(company.id,$index)">
-                            <span class="glyphicon glyphicon-remove"></span> 删除
+                            <i class="fa fa-remove"></i> 删除
                         </button>
                     </td>
                 </tr>

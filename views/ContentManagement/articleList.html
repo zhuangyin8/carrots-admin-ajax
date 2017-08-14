@@ -85,7 +85,7 @@
     <div class="panel-heading">
         <strong>Article列表</strong>
         <button type="button" class="btn btn-sm btn-info pull-right margin-left-10" ui-sref="field.articleDetail">
-            <span class="glyphicon glyphicon-plus"></span> 新增
+            <i class="fa fa-plus"></i> 新增
         </button>
     </div>
     <div class="panel-body table-responsive">
@@ -122,10 +122,10 @@
                         {{item.status|articleStatusChangeFilter}}
                     </button>
                     <button class="btn btn-xs btn-info" ui-sref="field.articleDetail({id:item.id})">
-                        <span class="glyphicon glyphicon-edit"></span> 编辑
+                        <i class="fa fa-edit"></i> 编辑
                     </button>
                     <button class="btn btn-xs btn-danger" ng-click="vm.deleteArticle(item.id,$index)">
-                        <span class="glyphicon glyphicon-remove"></span> 删除
+                        <i class="fa fa-remove"></i> 删除
                     </button>
                 </td>
             </tr>

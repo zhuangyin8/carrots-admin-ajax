@@ -4,7 +4,7 @@
             <div class="panel-heading">
                 角色列表
                 <button type="button" class="btn btn-sm btn-info pull-right margin-left-10" ui-sref="field.roleDetail">
-                    <span class="glyphicon glyphicon-plus"></span> 新增
+                    <i class="fa fa-plus"></i> 新增
                 </button>
             </div>
             <div class="panel-body">
@@ -22,10 +22,10 @@
                         <td>{{li.name}}</td>
                         <td>
                             <button class="btn btn-xs btn-info" ui-sref="field.roleDetail({id: li.id})">
-                                <span class="glyphicon glyphicon-edit"></span> 编辑
+                                <i class="fa fa-edit"></i> 编辑
                             </button>
                             <button class="btn btn-xs btn-danger" ng-click="vm.delete(li.id)">
-                                <span class="glyphicon glyphicon-remove"></span> 删除
+                                <i class="fa fa-remove"></i> 删除
                             </button>
 
                         </td>
