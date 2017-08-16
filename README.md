@@ -8,12 +8,12 @@
 
 - [x] BootStrap
 - [x] 登录/注销
-- [x] 表格
-- [x] 表单
-- [x] 富文本编辑器
+- [x] 表格展示数据
+- [x] 表单验证
+- [x] UEditor富文本编辑器
 - [x] 日期选择器
 - [x] 图片上传
-- [x] 支持切换主题
+- [x] 支持切换主题/皮肤
 - [x] 列表拖拽排序
 
 ## 目录结构
@@ -106,21 +106,23 @@
 
 ### 3. `nginx`安装
 
-`nginx`的安装非常简单，只需到其 [官网](http://nginx.org/) 下载，这是一个压缩包文件，把它解压到自定义文件夹即可，如`E:\nginx-1.13.1`(安装路径下禁止中文)。
+`nginx`的安装非常简单，只需到其 [官网](http://nginx.org/) 下载，这是一个压缩包文件，把它解压到自定义文件夹即可，如`E:\nginx-1.13.4`(安装路径下禁止中文)。
 
 打开文件夹，第一层文件目录里就有一个`nginx.exe`文件，双击打开，一个黑框一闪而过，任务管理器里有`nginx.exe`的进程。然后打开一个浏览器，访问`localhost`，如果出现`nginx`的欢迎界面，表示你的`nginx`已经安装成功。
 
+![nginx欢迎界面](assets/README-b66967a2.png)
+
 ### 4. 配置Nginx的配置文件
 
-文件夹中的conf文件下的nginx.conf就是配置文件，你通过浏览器输入`localhost`出现的页面即为文件夹 `nginx`下`html`文件中的index.html；所以你可以将你想要检测的产品放到`html`文件夹中，并将原本的index.html文件给删了，这个时候打开网页输入localhost，使用ctrl+F5清下浏览器缓存即出现你产品中的index.html(产品的首页都会命名为index.html）页面，然后进行一系列测试看看是否OK。
+conf文件夹下的nginx.conf就是配置文件，你通过浏览器输入`localhost`出现的页面即为文件夹 `nginx`下`html`文件中的`index.html`；所以你可以将你想要检测的项目代码放到`html`文件夹中，并将原本的index.html文件给删了，这个时候打开网页输入localhost，使用ctrl+F5清下浏览器缓存即出现你产品中的index.html(项目代码的首页一般会命名为index.html）页面，然后进行一系列测试看看其他功能是否实现。
 
 - nginx的本地配置
 
 目标：通过在浏览器输入域名，访问本地文件
 
-举例：在浏览器里输`入localhost`,访问本地`E:\nginx-1.13.1\html\index.html`文件(前提是这里自己先按路径写个测试用的html文件)
+举例：在浏览器里输入`localhost`,访问本地`E:\nginx-1.13.1\html\index.html`文件(前提是这里自己先按路径写个测试用的html文件)
 
-步骤：用记事本(其他文本编辑器`Atom`或者`Sublime`更好)打开你的`E:\nginx-1.13.1\conf\nginx.conf`文件。文件中有很多前面带#的代码代表该行是注释,可以忽略。
+步骤：用记事本(其他文本编辑器`Atom`或者`Sublime`)打开你的`E:\nginx-1.13.1\conf\nginx.conf`文件。文件中有很多前面带#的代码代表该行是注释,可以忽略。
 
 找到下面这段代码：
 
@@ -135,7 +137,7 @@
  }
 ```
 
-这段代码的作用就是在配置本地服务器，在浏览器中输入`localhost`，可以默认访问的根目录是`nginx`的安装 文件夹之下的文件夹`html`。初始状态的时候默认访问的文件是`nginx`的安装 文件夹之下的文件夹`html`之下的`index.html`文件(`nginx`的欢迎界面)。这就是为什么我们配置成功后能打开那个页面了。
+这段代码的作用就是在配置本地服务器，在浏览器中输入`localhost`，可以默认访问的根目录是`nginx`的安装文件夹之下的文件夹`html`。初始状态的时候默认访问的文件是`nginx`的安装文件夹之下的文件夹`html`之下的`index.html`文件(`nginx`的欢迎界面)。这就是为什么我们配置成功后能打开那个页面了。
 
 简单的理解是这样的，你在浏览器输入server_name对应的localhost就是你的主机，你的浏览器将跳转到配置文件中`html 文件(root)之下是我index.html 文件(index)` 。 所以你要实现访问本地文件中其他文件，只需把`root`设置为该文件所在文件夹路径，`index`设置为该文件的文件名，然后重启nginx个可以实现。
 
@@ -149,13 +151,11 @@
  server {
     listen       80;
     server_name  localhost;
-    location /
-    {
+    location / {
         root   html;
         index  index.html index.htm;
     }
-    location /carrots-admin-ajax/
-    {
+    location /carrots-admin-ajax/ {
         proxy_pass http://dev.admin.carrots.ptteng.com/;
     }
  }
