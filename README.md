@@ -4,6 +4,15 @@
 
 以下是项目运行的详细说明，如果还有问题，请在 Issues 中提出，我会尽力解答。
 
+ 
+## [Technology on websites](https://wappalyzer.com/)
+- AngularJS 1.3.18(JavaScript Framework)
+- Font Awesome(Font Script)
+- Nginx 1.13.4 (Web Server)
+- Twitter BootStrap(Web Framework)
+- jQuery 3.2.1(JavaScript Framework)
+- jQuery UI 1.12.1(JavaScript Framework)
+
 ## 实现功能
 
 - [x] BootStrap
