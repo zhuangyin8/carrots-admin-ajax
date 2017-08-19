@@ -6,16 +6,14 @@
 
  
 ## [Technology on websites](https://wappalyzer.com/)
-- AngularJS 1.3.18(JavaScript Framework)
-- Font Awesome(Font Script)
-- Nginx 1.13.4 (Web Server)
-- Twitter BootStrap(Web Framework)
-- jQuery 3.2.1(JavaScript Framework)
-- jQuery UI 1.12.1(JavaScript Framework)
+- [x] AngularJS 1.3.18(JavaScript Framework)
+- [x] Font Awesome(Font Script)
+- [x] Nginx 1.13.4 (Web Server)
+- [x] Twitter BootStrap(Web Framework)
+- [x] jQuery 3.2.1(JavaScript Framework)
+- [x] jQuery UI 1.12.1(JavaScript Framework)
 
 ## 实现功能
-
-- [x] BootStrap
 - [x] 登录/注销
 - [x] 表格展示数据
 - [x] 表单验证
