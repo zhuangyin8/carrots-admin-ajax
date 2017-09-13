@@ -1,6 +1,8 @@
 # 项目说明
 
-基于AngularJS1.3.18 + BootStrap 3.3.7 + +jQuery3.2.1 的后台管理系统解决方案（萝卜多后台管理系统）。 "萝卜多"人才推荐----葡萄藤旗下的主要业务之一，为人才推荐公司，同时也能对人才进行分类以方便浏览。此项目可用来学习搭建整套网站的技术和流程。
+基于AngularJS1.3.18 + BootStrap 3.3.7 + +jQuery3.2.1 的后台管理系统解决方案（萝卜多后台管理系统）。
+ "萝卜多"人才推荐----葡萄藤旗下的主要业务之一，为人才推荐公司，同时也能对人才进行分类以方便浏览。
+ 此项目可用来学习搭建整套网站的技术和流程。
 
 以下是项目运行的详细说明，**如果还有其他问题，请在 Issues 中提出，我会尽力解答**。
 
@@ -91,7 +93,7 @@ Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
 
   ## 在线运行此项目?
 
-  [系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
+  [系统在线运行地址](http://admin.luoboduo.com/#/login)
 
 账号:admin
 
