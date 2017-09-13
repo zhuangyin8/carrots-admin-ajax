@@ -17,7 +17,7 @@ Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
 
 - [x] AngularJS 1.3.18(JavaScript Framework)
 - [x] Font Awesome(Font Script)
-- [x] Nginx 1.13.4 (Web Server)
+- [x] Nginx 1.13.5 (Web Server)
 - [x] Twitter BootStrap(Web Framework)
 - [x] jQuery 3.2.1(JavaScript Framework)
 - [x] jQuery UI 1.12.1(JavaScript Framework)
@@ -85,15 +85,16 @@ Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
 
 ## 项目截图
 
-- 登录页面 ![深蓝色皮肤登录页面](assets/README-f6444b6f.png) ~~![橙色皮肤登陆页面](assets/README-4701bc36.png)~~ ![动态登录页面](assets/动态登录.gif)
+- 登录页面 ![深蓝色皮肤登录页面(http://admin.luoboduo.com)](assets/README-f6444b6f.png) ~~![橙色皮肤登陆页面](assets/README-4701bc36.png)~~ ![动态登录页面](assets/动态登录.gif)
 - 欢迎页面 ![欢迎页面](assets/README-92d818f2.png)
 - 信息管理 ![信息管理公司列表页面](assets/README-fbb1e82c.png)
 - 模态框 ![点击删除按钮弹出框](assets/README-8650dc55.png) ![成功删除](assets/README-40458cff.png)
 - 富文本编辑器和图片上传 ![富文本编辑器和图片上传](assets/README-2a1519a0.png) ![富文本编辑器和图片上传动态图](assets/README-686932bf.gif)
 
-  ## 在线运行此项目?
+## 在线运行此项目?
 
-  [系统在线运行地址](http://dev.admin.carrots.ptteng.com)
+[系统在线运行地址](http://dev.admin.carrots.ptteng.com)
+
 
 账号:admin
 
