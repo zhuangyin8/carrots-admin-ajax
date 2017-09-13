@@ -8,7 +8,7 @@
 
 QQ: 1756748740
 
-Email: [zhuangyin8@gmail.com](zhuangyin8@gmail.com)
+Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
 
 
 ## [Technology on websites](https://wappalyzer.com/)
