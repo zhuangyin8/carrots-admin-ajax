@@ -7,11 +7,12 @@
 ## 联系方式
 
 QQ: 1756748740
+
 Email: [zhuangyin8@gmail.com](zhuangyin8@gmail.com)
 
 
- 
 ## [Technology on websites](https://wappalyzer.com/)
+
 - [x] AngularJS 1.3.18(JavaScript Framework)
 - [x] Font Awesome(Font Script)
 - [x] Nginx 1.13.4 (Web Server)
@@ -19,7 +20,18 @@ Email: [zhuangyin8@gmail.com](zhuangyin8@gmail.com)
 - [x] jQuery 3.2.1(JavaScript Framework)
 - [x] jQuery UI 1.12.1(JavaScript Framework)
 
+页面总体规划
+
+- [x] 框架使用 AngularJS
+- [x] 类库使用 jQurey
+- [x] CSS 框架使用 BootStrap
+- [x] 路由使用 ui-router
+- [x] 轮播图使用 ui-bootstrap
+- [x] 文件上传使用 file-upload
+- [x] 表单验证 ng-message
+
 ## 实现功能
+
 - [x] 登录/注销
 - [x] 表格展示数据
 - [x] 表单验证
@@ -64,28 +76,22 @@ Email: [zhuangyin8@gmail.com](zhuangyin8@gmail.com)
 ```
 
 ## 页面逻辑图
+
 ![萝卜多后台管理系统脑图](assets/README-25430857.png)
 
 [最新版本百度脑图在线地址](http://naotu.baidu.com/file/42bbc924aa4f4e49cfd218a49ea67ba3?token=1e7a9e3c31400cf3)
 
 ## 项目截图
 
-- 登录页面
-![深蓝色皮肤登录页面](assets/README-f6444b6f.png)
-~~![橙色皮肤登陆页面](assets/README-4701bc36.png)~~
-![动态登录页面](assets/动态登录.gif)
-- 欢迎页面
-![欢迎页面](assets/README-92d818f2.png)
-- 信息管理
-![信息管理公司列表页面](assets/README-fbb1e82c.png)
-- 模态框
-![点击删除按钮弹出框](assets/README-8650dc55.png)
-![成功删除](assets/README-40458cff.png)
-- 富文本编辑器和图片上传
-![富文本编辑器和图片上传](assets/README-2a1519a0.png)
-![富文本编辑器和图片上传动态图](assets/README-686932bf.gif)
-## 在线运行此项目?
-[系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
+- 登录页面 ![深蓝色皮肤登录页面](assets/README-f6444b6f.png) ~~![橙色皮肤登陆页面](assets/README-4701bc36.png)~~ ![动态登录页面](assets/动态登录.gif)
+- 欢迎页面 ![欢迎页面](assets/README-92d818f2.png)
+- 信息管理 ![信息管理公司列表页面](assets/README-fbb1e82c.png)
+- 模态框 ![点击删除按钮弹出框](assets/README-8650dc55.png) ![成功删除](assets/README-40458cff.png)
+- 富文本编辑器和图片上传 ![富文本编辑器和图片上传](assets/README-2a1519a0.png) ![富文本编辑器和图片上传动态图](assets/README-686932bf.gif)
+
+  ## 在线运行此项目?
+
+  [系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
 
 账号:admin
 
@@ -93,15 +99,15 @@ Email: [zhuangyin8@gmail.com](zhuangyin8@gmail.com)
 
 ## 本地运行项目
 
-### 0. 先将项目clone 到你的电脑本地
+### 0.先将项目clone 到你的电脑本地
 
-### 1. [nginx 官网](https://nginx.org/en/download.html)下载 nginx
+### 1.[nginx 官网](https://nginx.org/en/download.html)下载 nginx
 
 ![nginx](https://nginx.org/nginx.png)
 
 点击[下载 nginx](https://nginx.org/download/nginx-1.13.1.zip) 直接下载之后 解压到相应的目录了，不用安装就可以直接用了，文件夹名字命为 `nginx`
 
-### 2. 测试`nginx`是否能成功启动
+### 2.测试`nginx`是否能成功启动
 
 打开之前存储解压之后的`nginx`文件夹，双击`nginx.exe` ，这是你会发现有个黑色弹出框一闪即逝；这说明它启动了；
 
@@ -117,7 +123,7 @@ Email: [zhuangyin8@gmail.com](zhuangyin8@gmail.com)
 
 > 怎样关闭`nginx`呢？因为你看不到它执行的文件，只能从任务管理器里关，但这显然是个麻烦而糟糕的办法。更好的办法，请参考下文的`nginx`使用技巧和常用命令。
 
-### 3. `nginx`安装
+### 3.`nginx`安装
 
 `nginx`的安装非常简单，只需到其 [官网](http://nginx.org/) 下载，这是一个压缩包文件，把它解压到自定义文件夹即可，如`E:\nginx-1.13.4`(安装路径下禁止中文)。
 
@@ -125,7 +131,7 @@ Email: [zhuangyin8@gmail.com](zhuangyin8@gmail.com)
 
 ![nginx欢迎界面](assets/README-b66967a2.png)
 
-### 4. 配置Nginx的配置文件
+### 4.配置Nginx的配置文件
 
 conf文件夹下的nginx.conf就是配置文件，你通过浏览器输入`localhost`出现的页面即为文件夹 `nginx`下`html`文件中的`index.html`；所以你可以将你想要检测的项目代码放到`html`文件夹中，并将原本的index.html文件给删了，这个时候打开网页输入localhost，使用ctrl+F5清下浏览器缓存即出现你产品中的index.html(项目代码的首页一般会命名为index.html）页面，然后进行一系列测试看看其他功能是否实现。
 
@@ -176,7 +182,7 @@ conf文件夹下的nginx.conf就是配置文件，你通过浏览器输入`local
 
 这段代码的作用可以认为是，调用接口时，用到/carrots-admin-ajax/的部分将被替换为<http://dev.admin.carrots.ptteng.com/。>
 
-### 5. 修改配置文件
+### 5.修改配置文件
 
 上面说到配置可以不修改，但在实际的测试过程中，一般不大可能会将产品往nginx文件里的html文件夹中塞，这个时候咱们就得改下配置了；请打开`nginx`文件夹下的`conf`文件夹，里面有个`nginx.conf`文件，用文本编辑器 (Atom, Sublime或者微软自带的文本编辑器)打开它。
 
@@ -208,7 +214,7 @@ location /
 
 然后重启nginx。
 
-### 6. nginx使用技巧和常用命令
+### 6.nginx使用技巧和常用命令
 
 因为nginx在使用时要经常重启，所以最好在命令行使用nginx，效率比在任务管理器里找到进程关闭，然后再双击打开高很多。
 
@@ -219,3 +225,11 @@ location /
 - 关闭命令：nginx -s stop
 
 ### 7.完整的nginx配置文件在项目中的nginx.conf 文件，可以直接替换你的nginx 配置文件
+
+### 8.萝卜多项目常见问题
+
+小组名 | demo不通过问题
+--- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1   | 1.公司和职业搜索选项卡选择后再从其他页面进入没有清空重置 2.后台登录，错误账户没有提示错误信息 3.后台账户管理列表不能展示全部账户 4.后台职位搜索，无法按发布时间搜索 人生的经验 1.【首页】"北京站"ui问题 2.【最新职位】列表无数据时，推荐职位card没有加鼠标手 3.首页-banner图下方展示数据没有左对齐 4.首页最新职位card图片未水平居中 5.跳转搜索公司页，搜索条件未清空 6.【找职位】推荐职位-文字超出card 7.找职位左侧侧边栏hover效果未实现 8.找精英 我们的优势 没有水平居中 9.页脚联系我们无法控制tab切换 10.找职位职业导航栏左侧ui问题，关于我们，联系我们ui问题 11.iconfont垂直居中问题。 12.在招职位未按照最新需求开发 13.职位搜索页的搜索结果一页只显示了9条，应显示10条 14.搜索职位页无结果时推荐职位图片溢出card. 15.无搜索结果时推荐职位card只有3个，应为4个 16.最新职位和推荐职位列表数据展示错误，没有区别 第二次demo不通过1.跳转搜索公司页，搜索条件未清空2.【首页】最新职位卡片宽度不相同3.【首页】服务流程-样式问题4.【公司列表页】公司card样式问题5.职位搜索页无结果时，下方展示的推荐职业card转行了
+2   | 1、首页最新职位点击跳转页面从尾部开始显示 2、成功案例认证公司时间未按倒序排 3、公司列表页点击公司无法正常跳转 4、关于我们联系我们样式 5、公司详情页-在招职位，导航栏此时无选中状态 6、找职位-无搜索结果时推荐公司样式 7、点击搜索公司时，头部跳到职业。 8、找职位-公司搜索某些关键字无效 9、找职位-推荐职位、最新职位处的查看更多的样式
+3   | 1.问题记录：首页-最新职位轮播，图片没有居中； 2.公司详情页-公司产品 图片变形 3.找职位首页-推荐公司 小图变形 4.缩放比80%时，banner图没有铺满 5.找精英-合作案例：多出清空和搜索按钮，与ui图不符；不是更改标签实时触发搜索。 6.公司搜索页无结果时，下面的推荐公司卡片点击无跳转。 7.联系我们。右侧：电话和网址图标是同一个。响应式有问题。 响应式： 8.首页-服务流程-伙伴之言 连在一起 9.找职位首页-推荐公司 响应式图片变形 10.找精英-无响应式
