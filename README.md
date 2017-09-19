@@ -8,7 +8,9 @@
 
 ## 联系方式
 
-QQ: 1756748740
+QQ: 1756748740(不常使用)
+
+Wechat: ![](https://wx4.sinaimg.cn/mw690/7ed42f5cly1fjozwpsdiij20by0bymxy.jpg)
 
 Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
 
