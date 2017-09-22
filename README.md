@@ -12,9 +12,9 @@ Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
 
 QQ: 1756748740 (不常使用)
 
-[网易云音乐](http://music.163.com/#/user/home?id=374407)
+[庄引 - 用户 - 网易云音乐](http://music.163.com/#/user/home?id=374407)
 
-[知乎](https://www.zhihu.com/people/zhuangyin/activities)
+[庄引 - 知乎](https://www.zhihu.com/people/zhuangyin/activities)
 
 [庄引之的微博_微博](https://weibo.com/zhuangyinzhi/)
 
