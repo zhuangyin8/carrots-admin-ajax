@@ -16,6 +16,8 @@ QQ: 1756748740 (不常使用)
 
 [知乎](https://www.zhihu.com/people/zhuangyin/activities)
 
+[庄引之的微博_微博](https://weibo.com/zhuangyinzhi/)
+
 Wechat: ![](https://wx4.sinaimg.cn/mw690/7ed42f5cly1fjozwpsdiij20by0bymxy.jpg)
 
 
