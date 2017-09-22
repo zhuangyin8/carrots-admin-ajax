@@ -30,7 +30,7 @@ Wechat: ![](https://wx4.sinaimg.cn/mw690/7ed42f5cly1fjozwpsdiij20by0bymxy.jpg)
 - [x] Nginx 1.13.5 (Web Server)
 - [x] Twitter BootStrap(Web Framework)
 - [x] jQuery 3.2.1(JavaScript Library)
-- [x] jQuery UI 1.12.1(JavaScript Framework)
+- [x] jQuery UI 1.12.1(JavaScript Library)
 
 页面总体规划
 
