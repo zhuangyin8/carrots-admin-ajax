@@ -104,7 +104,7 @@ Wechat: ![](https://wx4.sinaimg.cn/mw690/7ed42f5cly1fjozwpsdiij20by0bymxy.jpg)
 
 ## 在线运行此项目?
 
-[系统在线运行地址](http://dev.admin.carrots.ptteng.com)
+[系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.htm)
 
 
 账号:admin
