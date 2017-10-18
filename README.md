@@ -46,6 +46,7 @@ Wechat: ![](https://wx4.sinaimg.cn/mw690/7ed42f5cly1fjozwpsdiij20by0bymxy.jpg)
 
 - [x] 登录/注销
 - [x] 表格展示数据
+- [x] 可编辑表格
 - [x] 表单验证
 - [x] UEditor富文本编辑器
 - [x] 日期选择器
