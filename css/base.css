@@ -2,13 +2,13 @@
 /*换肤功能，需要多份样式，为了以后方便修改，特有样式提出去*/
 
 /*.wrapper {*/
-/*background: url("/images/skin/login-bg-orange2.jpg") no-repeat center;*/
-/*background-size: cover;*/
-/*position: relative;*/
-/*top: 0;*/
-/*right: 0;*/
-/*bottom: 0;*/
-/*left: 0;*/
+    /*background: url("/images/skin/login-bg-orange2.jpg") no-repeat center;*/
+    /*background-size: cover;*/
+    /*position: relative;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
 /*}*/
 
 .page-wrapper {
