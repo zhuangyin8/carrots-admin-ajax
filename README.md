@@ -94,7 +94,7 @@ Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
 
 ## 在线运行此项目
 
-[系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)
+<!--[系统在线运行地址](http://student.admin.carrots.ptteng.com/Dangal/index.html#/login)-->
 
 
 账号:admin
