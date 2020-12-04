@@ -6,12 +6,6 @@
 
 以下是项目运行的详细说明，**如果还有其他问题，请在 Issues 中提出，我会尽力解答**。
 
-## 联系方式
-
-Email: [zhuangyin8@gmail.com](mailto:zhuangyin8@gmail.com)
-
-
-
 ## [Technology on websites](https://wappalyzer.com/)
 
 - [x] AngularJS 1.3.18(JavaScript Framework)
