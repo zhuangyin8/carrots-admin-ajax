@@ -74,17 +74,17 @@
 
 ## 页面逻辑图
 
-![萝卜多后台管理系统脑图](assets/README-25430857.png)
+![萝卜多后台管理系统脑图](assets/857.png)
 
 [最新版本百度脑图在线地址](http://naotu.baidu.com/file/42bbc924aa4f4e49cfd218a49ea67ba3?token=1e7a9e3c31400cf3)
 
 ## 项目截图
 
-- 登录页面 ![深蓝色皮肤登录页面(http://admin.luoboduo.com)](assets/README-f6444b6f.png) ~~![橙色皮肤登陆页面](assets/README-4701bc36.png)~~ ![动态登录页面](assets/动态登录.gif)
-- 欢迎页面 ![欢迎页面](assets/README-92d818f2.png)
+- 登录页面 ![深蓝色皮肤登录页面(http://admin.luoboduo.com)](assets/README-f6444b6f.png) ~~![橙色皮肤登陆页面](assets/bc36.png)~~ ![动态登录页面](assets/动态登录.gif)
+- 欢迎页面 ![欢迎页面](assets/d818f2.png)
 - 信息管理 ![信息管理公司列表页面](assets/README-fbb1e82c.png)
-- 模态框 ![点击删除按钮弹出框](assets/README-8650dc55.png) ![成功删除](assets/README-40458cff.png)
-- 富文本编辑器和图片上传 ![富文本编辑器和图片上传](assets/README-2a1519a0.png) ![富文本编辑器和图片上传动态图](assets/README-686932bf.gif)
+- 模态框 ![点击删除按钮弹出框](assets/dc55.png) ![成功删除](assets/cff.png)
+- 富文本编辑器和图片上传 ![富文本编辑器和图片上传](assets/README-2a1519a0.png) ![富文本编辑器和图片上传动态图](assets/2bf.gif)
 
 ## 在线运行此项目
 
@@ -111,7 +111,7 @@
 
 然后随便打开一个浏览器(推荐使用 `Chrome` )；在地址栏输入`localhost`出现下图；恭喜你安装成功了；
 
-![](https://pic2.zhimg.com/v2-845907687c3d5e6931f7390b46585add_r.png)
+![](https://pic2.zhimg.com/7687c3d5e6931f7390b46585add_r.png)
 
 > nginx 的作用
 
@@ -160,7 +160,7 @@ conf文件夹下的nginx.conf就是配置文件，你通过浏览器输入`local
 
 - nginx的跨域配置 目标：通过在浏览器输入域名，访问本地文件，向测试(或线上)环境的服务器发送请求
 
-举例：通过在浏览器输入`localhost`,访问本地文件，向测试服务器( <http://dev.admin.carrots.ptteng.com/)提供的获取用户总数的接口发送请求。>
+举例：通过在浏览器输入`localhost`,访问本地文件，向测试服务器( <http://dev.admin.carrots.ptteng.com/>)提供的获取用户总数的接口发送请求。
 
 步骤：在原来的基础上配置location /carrots-admin-ajax/。加上如下location /carrots-admin-ajax/{}部分代码。参数其实就一个，proxy_pass配置为要访问的服务器的IP和端口号(没写的话是默认的8080)。其余的几行是固定的设置。
 
